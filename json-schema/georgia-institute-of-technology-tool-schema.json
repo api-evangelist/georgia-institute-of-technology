@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repository.gatech.edu/schemas/sums-tool.schema.json",
+  "title": "SUMS Tool Record",
+  "description": "A tool/equipment record returned by the SUMS equipmentGroup_tools operation.",
+  "type": "object",
+  "properties": {
+    "equipmentGroupId": {
+      "type": "integer",
+      "description": "Identifier of the equipment group."
+    },
+    "locationId": {
+      "type": "integer",
+      "description": "Identifier of the location."
+    },
+    "toolId": {
+      "type": "integer",
+      "description": "Identifier of the tool."
+    },
+    "currentUserUserName": {
+      "type": "string"
+    },
+    "equipmentGroupDescription": {
+      "type": "string"
+    },
+    "equipmentGroupName": {
+      "type": "string"
+    },
+    "locationAddress": {
+      "type": "string"
+    },
+    "locationDescription": {
+      "type": "string"
+    },
+    "locationManager": {
+      "type": "string"
+    },
+    "locationName": {
+      "type": "string"
+    },
+    "locationUrl": {
+      "type": "string"
+    },
+    "toolCurrentUser": {
+      "type": "string"
+    },
+    "toolDescription": {
+      "type": "string"
+    },
+    "toolInUseSince": {
+      "type": "string"
+    },
+    "toolName": {
+      "type": "string"
+    },
+    "locationPhone": {
+      "type": "string"
+    },
+    "toolIsOperational": {
+      "type": "boolean"
+    },
+    "HeroImageURLs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Trainers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

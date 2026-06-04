@@ -26,6 +26,7 @@ tags:
   - United States
 created: '2026-06-03'
 modified: '2026-06-03'
+# artifacts added 2026-06-03: SUMS OpenAPI 3.0, schemas, structures, examples, rules, vocabulary, json-ld
 specificationVersion: '0.19'
 apis:
   - aid: georgia-institute-of-technology:repository-oai
@@ -90,6 +91,22 @@ apis:
     properties:
       - type: Documentation
         url: https://sums.gatech.edu/SUMSAPI/rest/API/
+      - type: Swagger
+        url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+      - type: OpenAPI
+        url: openapi/georgia-institute-of-technology-sums.yaml
+      - type: x-json-schema
+        url: json-schema/georgia-institute-of-technology-tool-schema.json
+      - type: x-json-structure
+        url: json-structure/georgia-institute-of-technology-tool-structure.json
+      - type: x-examples
+        url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+      - type: x-rules
+        url: rules/georgia-institute-of-technology-rules.yml
+      - type: x-vocabulary
+        url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+      - type: x-json-ld
+        url: json-ld/georgia-institute-of-technology-context.jsonld
 common:
   - type: Website
     url: https://www.gatech.edu/

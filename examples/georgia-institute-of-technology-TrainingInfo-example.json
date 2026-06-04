@@ -1,0 +1,11 @@
+[
+  {
+    "Training_Module_Status": "Passed",
+    "Training_Module_Type": "Online Quiz",
+    "Training_Module_Name": "SEM Safety",
+    "TrainingDateTime": "2026-05-20 14:32",
+    "Researcher": "Jane Doe",
+    "Tool": "Scanning Electron Microscope",
+    "isHasAccessToTool": true
+  }
+]

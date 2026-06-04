@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "gt": "https://sums.gatech.edu/vocab#",
+    "@vocab": "https://sums.gatech.edu/vocab#",
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+    "institution": {
+      "@id": "schema:CollegeOrUniversity",
+      "@type": "@id"
+    },
+    "Tool": "gt:Tool",
+    "toolId": "gt:toolId",
+    "toolName": "schema:name",
+    "toolDescription": "schema:description",
+    "toolIsOperational": "gt:isOperational",
+    "EquipmentGroup": "gt:EquipmentGroup",
+    "equipmentGroupId": "gt:equipmentGroupId",
+    "equipmentGroupName": "schema:name",
+    "Location": "schema:Place",
+    "locationName": "schema:name",
+    "locationAddress": "schema:address",
+    "locationPhone": "schema:telephone",
+    "locationUrl": "schema:url",
+    "locationManager": "gt:manager",
+    "TrainingModule": "gt:TrainingModule",
+    "Training_Module_Name": "schema:name",
+    "Training_Module_Status": "gt:status",
+    "Researcher": {
+      "@id": "schema:Person",
+      "@type": "@id"
+    },
+    "ResearcherName": "schema:name",
+    "UserName": "gt:username",
+    "UserEmail": "schema:email",
+    "StartDateTime": "schema:startDate",
+    "EndDateTime": "schema:endDate"
+  },
+  "@type": "schema:CollegeOrUniversity",
+  "name": "Georgia Institute of Technology",
+  "url": "https://www.gatech.edu/",
+  "description": "Public research university in Atlanta, Georgia, operating the SUMS Shared User Management System REST API for shared research equipment access and training."
+}

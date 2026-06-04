@@ -1,0 +1,12 @@
+{
+  "WhoLoggedInListList": [
+    {
+      "ToolId": 104,
+      "ToolName": "Scanning Electron Microscope",
+      "ResearcherName": "Jane Doe",
+      "StartDateTime": "2026-06-03T09:00:00.000Z",
+      "EndDateTime": "2026-06-03T10:30:00.000Z"
+    }
+  ],
+  "Count": 1
+}

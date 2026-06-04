@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://repository.gatech.edu/structures/SumsTool.json",
+  "name": "SumsTool",
+  "type": "object",
+  "properties": {
+    "equipmentGroupId": {
+      "type": "int32"
+    },
+    "locationId": {
+      "type": "int32"
+    },
+    "toolId": {
+      "type": "int32"
+    },
+    "toolName": {
+      "type": "string"
+    },
+    "toolDescription": {
+      "type": "string"
+    },
+    "toolIsOperational": {
+      "type": "boolean"
+    },
+    "toolCurrentUser": {
+      "type": "string"
+    },
+    "currentUserUserName": {
+      "type": "string"
+    },
+    "toolInUseSince": {
+      "type": "string"
+    },
+    "equipmentGroupName": {
+      "type": "string"
+    },
+    "equipmentGroupDescription": {
+      "type": "string"
+    },
+    "locationName": {
+      "type": "string"
+    },
+    "locationAddress": {
+      "type": "string"
+    },
+    "locationPhone": {
+      "type": "string"
+    },
+    "locationManager": {
+      "type": "string"
+    },
+    "locationUrl": {
+      "type": "string"
+    },
+    "HeroImageURLs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Trainers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

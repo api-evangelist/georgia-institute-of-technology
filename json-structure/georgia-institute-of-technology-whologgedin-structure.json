@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://repository.gatech.edu/structures/SumsWhoLoggedIn.json",
+  "name": "SumsWhoLoggedIn",
+  "type": "object",
+  "properties": {
+    "ToolId": {
+      "type": "int32"
+    },
+    "ToolName": {
+      "type": "string"
+    },
+    "ResearcherName": {
+      "type": "string"
+    },
+    "StartDateTime": {
+      "type": "datetime"
+    },
+    "EndDateTime": {
+      "type": "datetime"
+    }
+  }
+}

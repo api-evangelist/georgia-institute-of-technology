@@ -1,0 +1,62 @@
+extends: []
+formats:
+  - oas3
+rules:
+  gt-sums-info-title:
+    description: API must have a descriptive title.
+    severity: error
+    given: $.info
+    then:
+      field: title
+      function: truthy
+
+  gt-sums-server-defined:
+    description: A server URL must be defined and point at the SUMS API base path.
+    severity: warn
+    given: $.servers
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          minItems: 1
+
+  gt-sums-operation-id:
+    description: Every operation must declare an operationId (SUMS uses the operation name).
+    severity: error
+    given: $.paths[*][get,post]
+    then:
+      field: operationId
+      function: truthy
+
+  gt-sums-operation-tagged:
+    description: SUMS operations are grouped under the "API" tag.
+    severity: warn
+    given: $.paths[*][get,post]
+    then:
+      field: tags
+      function: truthy
+
+  gt-sums-200-response:
+    description: Each operation should document a 200 response.
+    severity: warn
+    given: $.paths[*][get,post].responses
+    then:
+      field: '200'
+      function: truthy
+
+  gt-sums-query-string-params:
+    description: SUMS scalar query parameters carry a typed schema.
+    severity: warn
+    given: $.paths[*][get,post].parameters[?(@.in=='query')]
+    then:
+      field: schema
+      function: truthy
+
+  gt-sums-no-server-vars-secrets:
+    description: API keys (EGKey, APIKey) travel as query parameters; flag for awareness, never inline secrets.
+    severity: hint
+    given: $.paths[*][get,post].parameters[?(@.name=='EGKey' || @.name=='APIKey')]
+    then:
+      field: required
+      function: defined

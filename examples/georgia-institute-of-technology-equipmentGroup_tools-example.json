@@ -1,0 +1,30 @@
+[
+  {
+    "equipmentGroupId": 12,
+    "locationId": 3,
+    "toolId": 104,
+    "toolName": "Scanning Electron Microscope",
+    "toolDescription": "SEM in the cleanroom",
+    "toolIsOperational": true,
+    "toolCurrentUser": "",
+    "currentUserUserName": "",
+    "toolInUseSince": "",
+    "equipmentGroupName": "IEN Cleanroom",
+    "equipmentGroupDescription": "",
+    "locationName": "Marcus Nanotechnology Building",
+    "locationAddress": "345 Ferst Dr NW, Atlanta, GA 30332",
+    "locationPhone": "",
+    "locationManager": "",
+    "locationUrl": "",
+    "HeroImageURLs": [
+      {
+        "Text": "https://sums.gatech.edu/images/tool104.jpg"
+      }
+    ],
+    "Trainers": [
+      {
+        "Text": "jdoe3"
+      }
+    ]
+  }
+]

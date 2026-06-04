@@ -1,0 +1,62 @@
+vocabulary:
+  name: Georgia Tech SUMS API Vocabulary
+  description: >-
+    Controlled vocabulary for the Georgia Tech SUMS (Shared User Management
+    System) REST API, derived from the published Swagger 2.0 definition. SUMS
+    manages access to shared research instruments and lab tools, training
+    records, and equipment-group queues.
+  version: "1.0.0"
+  terms:
+    - term: SUMS
+      definition: >-
+        Shared User Management System operated by Georgia Tech to manage
+        researcher access, training, and usage of shared lab equipment.
+      tags: [system, core]
+    - term: Equipment Group
+      definition: >-
+        A named grouping of tools/instruments (e.g., a cleanroom or core
+        facility) identified by equipmentGroupId.
+      tags: [object]
+    - term: Tool
+      definition: >-
+        An individual research instrument tracked by SUMS, identified by toolId,
+        with operational status and current-user fields.
+      tags: [object]
+    - term: Location
+      definition: >-
+        The physical place where a tool resides, including name, address, phone,
+        manager, and URL.
+      tags: [object]
+    - term: Training Module
+      definition: >-
+        A unit of required training (online quiz, session, or checkoff) that
+        gates access to a tool.
+      tags: [object, training]
+    - term: WhoLoggedIn
+      definition: >-
+        A login/usage session record listing the researcher, tool, and start and
+        end date-times.
+      tags: [object, usage]
+    - term: Queue
+      definition: >-
+        The ordered list of users or groups waiting to use a tool, exposed via
+        equipmentGroup_queueUsers and equipmentGroup_queueGroups.
+      tags: [object, scheduling]
+    - term: EGKey
+      definition: >-
+        Equipment-group API key passed as a query parameter to authorize
+        equipment-group-scoped operations.
+      tags: [auth, credential]
+    - term: APIKey
+      definition: >-
+        API key passed as a query parameter to authorize the ContactForms
+        operation.
+      tags: [auth, credential]
+    - term: BuzzCardNumber
+      definition: >-
+        The Georgia Tech BuzzCard identifier used to resolve a username and
+        email address.
+      tags: [identifier]
+    - term: GTUsername
+      definition: Georgia Tech account username used to identify a researcher.
+      tags: [identifier]

@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://repository.gatech.edu/schemas/sums-traininginfo.schema.json",
+  "title": "SUMS TrainingInfo Record",
+  "description": "A training module status record returned by the SUMS TrainingInfo operation.",
+  "type": "object",
+  "properties": {
+    "Training_Module_Status": {
+      "type": "string"
+    },
+    "Training_Module_Type": {
+      "type": "string"
+    },
+    "Training_Module_Name": {
+      "type": "string"
+    },
+    "TrainingDateTime": {
+      "type": "string",
+      "description": "For training session/checkoff, date/time marked attended; otherwise when the training attempt was made."
+    },
+    "Researcher": {
+      "type": "string"
+    },
+    "Tool": {
+      "type": "string"
+    },
+    "isHasAccessToTool": {
+      "type": "boolean"
+    }
+  }
+}
