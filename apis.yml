@@ -1,0 +1,116 @@
+---
+aid: georgia-institute-of-technology
+name: Georgia Institute of Technology
+description: >-
+  Georgia Institute of Technology (Georgia Tech) is a public research university
+  in Atlanta, Georgia, United States, ranked #114 in the QS World University
+  Rankings 2025. Its public developer/API footprint is modest and partly gated:
+  the Georgia Tech Library Digital Repository (DSpace 7) exposes a public OAI-PMH
+  metadata interface and a public DSpace REST API, the Research Network
+  Operations Center (RNOC) documents a public GT Places API for campus building
+  and office data, and the Office of Information Technology operates the
+  credentialed BuzzAPI (api.gatech.edu) plus CAS/Shibboleth single sign-on. The
+  official open-source GitHub organization is github.com/gatech.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/georgia-institute-of-technology/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Research
+  - Open Data
+  - Library
+  - United States
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: georgia-institute-of-technology:repository-oai
+    name: GT Digital Repository OAI-PMH
+    description: >-
+      Public OAI-PMH 2.0 metadata harvesting interface for the Georgia Tech
+      Digital Repository (DSpace 7), the institutional repository for theses,
+      dissertations, publications, and other scholarly output. Verified live;
+      Identify response names the repository "Georgia Tech Digital Repository"
+      with earliest datestamp 2004-07-21.
+    humanURL: https://repository.gatech.edu/
+    baseURL: https://repository.gatech.edu/server/oai/request
+    tags: [ Library, Institutional Repository, OAI-PMH, Metadata, Research, Open Data ]
+    properties:
+      - type: Documentation
+        url: https://repository.gatech.edu/
+  - aid: georgia-institute-of-technology:repository-rest
+    name: GT Digital Repository REST API
+    description: >-
+      DSpace 7 REST API for the Georgia Tech Digital Repository, providing
+      programmatic access to communities, collections, items, and bitstreams.
+      The API root at /server/api responds HTTP 200 (public, read access).
+    humanURL: https://repository.gatech.edu/
+    baseURL: https://repository.gatech.edu/server/api
+    tags: [ Library, Institutional Repository, REST, Metadata, Research ]
+    properties:
+      - type: Documentation
+        url: https://repository.gatech.edu/
+  - aid: georgia-institute-of-technology:gt-places
+    name: GT Places API
+    description: >-
+      Documented by the Georgia Tech Research Network Operations Center (RNOC),
+      the GT Places API provides access to campus place information including
+      offices and buildings with names, addresses, phone numbers, images,
+      categories, and GPS coordinates. RNOC describes it as openly accessible.
+    humanURL: https://rnoc.gatech.edu/gt-places-api
+    tags: [ Places, Campus, Geolocation, Maps, Open Data ]
+    properties:
+      - type: Documentation
+        url: https://rnoc.gatech.edu/gt-places-api
+  - aid: georgia-institute-of-technology:buzzapi
+    name: BuzzAPI
+    description: >-
+      Georgia Tech's enterprise integration API (BuzzAPI v3), operated by the
+      Office of Information Technology at api.gatech.edu with a test environment
+      at test.api.gatech.edu. Access requires institutional credentials; the
+      apiv3 root is not publicly browsable (returns 404 without auth) and the
+      developers handbook documenting it sits behind CAS single sign-on.
+    humanURL: https://webmasters.gatech.edu/handbook/developers
+    tags: [ Enterprise, Integration, Authentication, Gated ]
+    properties:
+      - type: Documentation
+        url: https://webmasters.gatech.edu/handbook/buzzapi-v3-example
+  - aid: georgia-institute-of-technology:sums
+    name: SUMS REST API
+    description: >-
+      A REST API published by Georgia Tech's SUMS system (sums.gatech.edu),
+      built on the OutSystems low-code platform. The API help page responds
+      HTTP 200 but operation-level documentation is not exposed publicly.
+    humanURL: https://sums.gatech.edu/SUMSAPI/rest/API/
+    tags: [ REST, Enterprise, Undocumented ]
+    properties:
+      - type: Documentation
+        url: https://sums.gatech.edu/SUMSAPI/rest/API/
+common:
+  - type: Website
+    url: https://www.gatech.edu/
+  - type: GitHub
+    url: https://github.com/gatech
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/georgia-institute-of-technology/
+  - type: DeveloperPortal
+    url: https://rnoc.gatech.edu/api
+  - type: SourceCode
+    url: https://ospo.cc.gatech.edu/github-resources/
+  - type: Authentication
+    url: https://sso.gatech.edu/
+  - type: Plans
+    url: plans/georgia-institute-of-technology-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/georgia-institute-of-technology-rate-limits.yml
+  - type: FinOps
+    url: finops/georgia-institute-of-technology-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

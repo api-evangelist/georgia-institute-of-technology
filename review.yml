@@ -1,0 +1,57 @@
+---
+name: Georgia Institute of Technology
+description: Georgia Institute of Technology public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/georgia-institute-of-technology/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 3
+    summary: >-
+      Verified live and public: the GT Digital Repository OAI-PMH interface
+      (Identify returns "Georgia Tech Digital Repository", HTTP 200) and the
+      DSpace 7 REST API root (HTTP 200). The RNOC GT Places API is documented
+      as openly accessible (docs page HTTP 200) but no public base URL or
+      endpoint details are published. BuzzAPI exists at api.gatech.edu but is
+      credentialed: the apiv3 root returns 404 unauthenticated and the
+      developers handbook redirects to CAS SSO. The SUMS REST help page loads
+      (HTTP 200) but exposes no public operation docs. The official GitHub org
+      github.com/gatech exists with minimal public repos. No fabricated
+      endpoints; gated and undocumented surfaces flagged honestly.
+    endpoints:
+      - url: https://repository.gatech.edu/server/oai/request?verb=Identify
+        status: 200
+        note: OAI-PMH Identify confirmed, repository name "Georgia Tech Digital Repository"
+      - url: https://repository.gatech.edu/server/api
+        status: 200
+        note: DSpace 7 REST API root responds, public read
+      - url: https://repository.gatech.edu/
+        status: 200
+        note: Digital Repository human-facing site
+      - url: https://rnoc.gatech.edu/gt-places-api
+        status: 200
+        note: GT Places API docs page; openly accessible, no base URL published
+      - url: https://rnoc.gatech.edu/api
+        status: 200
+        note: RNOC API landing/developer page
+      - url: https://api.gatech.edu/apiv3/
+        status: 404
+        note: BuzzAPI v3 root not publicly browsable without credentials
+      - url: https://webmasters.gatech.edu/handbook/developers
+        status: 302
+        note: Developers handbook redirects to CAS single sign-on (gated)
+      - url: https://sums.gatech.edu/SUMSAPI/rest/API/
+        status: 200
+        note: SUMS REST API help page (OutSystems); no public operation docs
+      - url: https://sso.gatech.edu/
+        status: 200
+        note: Central Authentication Service single sign-on
+      - url: https://github.com/gatech
+        status: 200
+        note: Official Georgia Tech GitHub organization, minimal public repos
+      - url: https://www.gatech.edu/
+        status: 200
+        note: Official institutional website
+      - url: https://smartech.gatech.edu/dspace-oai/request?verb=Identify
+        status: 0
+        note: Legacy SMARTech OAI endpoint dead; superseded by repository.gatech.edu
