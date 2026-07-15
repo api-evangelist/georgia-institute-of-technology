@@ -108,6 +108,8 @@ apis:
       - type: x-json-ld
         url: json-ld/georgia-institute-of-technology-context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/georgia-institute-of-technology-agentic-access.yml
   - type: DomainSecurity
     url: security/georgia-institute-of-technology-domain-security.yml
   - type: Website
