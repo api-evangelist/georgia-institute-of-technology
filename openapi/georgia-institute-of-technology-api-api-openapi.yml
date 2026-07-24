@@ -1,12 +1,12 @@
 openapi: 3.0.3
 info:
-  title: Georgia Tech SUMS REST API
-  description: REST API published by Georgia Tech's SUMS system (Shared User Management
-    System), built on the OutSystems low-code platform. Converted faithfully from
-    the published Swagger 2.0 document at https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json.
+  title: Georgia Tech SUMS REST API API
+  description: REST API published by Georgia Tech's SUMS system (Shared User Management System), built on the OutSystems low-code platform. Converted faithfully from the published Swagger 2.0 document at https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json.
   version: '1'
 servers:
 - url: https://sums.gatech.edu/SUMSAPI/rest/API
+tags:
+- name: API
 paths:
   /Add_User_By_Username:
     post:
@@ -380,8 +380,7 @@ paths:
       - name: RemoveFromTemplate
         in: query
         required: false
-        description: Input for removing user from template based off of GTUsername
-          and TemplateName
+        description: Input for removing user from template based off of GTUsername and TemplateName
         schema:
           type: boolean
           example: false
@@ -479,6 +478,57 @@ paths:
                 $ref: '#/components/schemas/IntegerWhoLoggedInListListRecord'
 components:
   schemas:
+    QuestionAnswersStructure:
+      description: ''
+      type: object
+      properties:
+        Responder:
+          type: string
+          default: ''
+        DateTime:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+        Responses:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsesStructure'
+    TrainingInfoAPIStructure:
+      description: ''
+      type: object
+      properties:
+        Training_Module_Status:
+          type: string
+          default: ''
+        Training_Module_Type:
+          type: string
+          default: ''
+        TrainingDateTime:
+          type: string
+          default: ''
+          description: For training session/checkoff, date/time marked atttended. For all other training types when the training attempt was made.
+        Researcher:
+          type: string
+          default: ''
+        Tool:
+          type: string
+          default: ''
+        Training_Module_Name:
+          type: string
+          default: ''
+        isHasAccessToTool:
+          type: boolean
+          example: false
+    EmailTextRecord:
+      description: ''
+      type: object
+      properties:
+        UserName:
+          type: string
+          default: ''
+        UserEmail:
+          type: string
+          default: ''
     BooleanBooleanIntegerTextIntegerTextIntegerTextRecord:
       description: ''
       type: object
@@ -510,57 +560,6 @@ components:
           type: integer
           example: 0
           format: int32
-    EmailTextRecord:
-      description: ''
-      type: object
-      properties:
-        UserName:
-          type: string
-          default: ''
-        UserEmail:
-          type: string
-          default: ''
-    IntegerWhoLoggedInListListRecord:
-      description: ''
-      type: object
-      properties:
-        WhoLoggedInListList:
-          type: array
-          items:
-            $ref: '#/components/schemas/WhoLoggedInList'
-        Count:
-          type: integer
-          example: 0
-          format: int32
-    LongIntegerBooleanTextRecord:
-      description: ''
-      type: object
-      properties:
-        name:
-          type: string
-          default: ''
-        id:
-          type: integer
-          example: 1234567891234567
-          format: int64
-        isGroup:
-          type: boolean
-          example: false
-    QuestionAnswersStructure:
-      description: ''
-      type: object
-      properties:
-        Responder:
-          type: string
-          default: ''
-        DateTime:
-          type: string
-          format: date-time
-          example: '2014-12-31T23:59:59.938Z'
-        Responses:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResponsesStructure'
     ResponsesStructure:
       description: ''
       type: object
@@ -588,18 +587,33 @@ components:
           type: integer
           example: 1234567891234567
           format: int64
+    WhoLoggedInList:
+      description: ''
+      type: object
+      properties:
+        EndDateTime:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+        ToolName:
+          type: string
+          default: ''
+        StartDateTime:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+        ResearcherName:
+          type: string
+          default: ''
+        ToolId:
+          type: integer
+          example: 0
+          format: int32
     TextRecord:
       description: ''
       type: object
       properties:
         Username:
-          type: string
-          default: ''
-    TextRecord2:
-      description: ''
-      type: object
-      properties:
-        Text:
           type: string
           default: ''
     ? TextTextDepartmentIdentifierTextTextRecordListTextTextLocationsIdentifierTextTextPhoneNumberTextTextTextToolIdentifierTextBooleanTextTextRecordListRecord
@@ -668,52 +682,36 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TextRecord2'
-    TrainingInfoAPIStructure:
+    LongIntegerBooleanTextRecord:
       description: ''
       type: object
       properties:
-        Training_Module_Status:
+        name:
           type: string
           default: ''
-        Training_Module_Type:
-          type: string
-          default: ''
-        TrainingDateTime:
-          type: string
-          default: ''
-          description: For training session/checkoff, date/time marked atttended.
-            For all other training types when the training attempt was made.
-        Researcher:
-          type: string
-          default: ''
-        Tool:
-          type: string
-          default: ''
-        Training_Module_Name:
-          type: string
-          default: ''
-        isHasAccessToTool:
+        id:
+          type: integer
+          example: 1234567891234567
+          format: int64
+        isGroup:
           type: boolean
           example: false
-    WhoLoggedInList:
+    IntegerWhoLoggedInListListRecord:
       description: ''
       type: object
       properties:
-        EndDateTime:
-          type: string
-          format: date-time
-          example: '2014-12-31T23:59:59.938Z'
-        ToolName:
-          type: string
-          default: ''
-        StartDateTime:
-          type: string
-          format: date-time
-          example: '2014-12-31T23:59:59.938Z'
-        ResearcherName:
-          type: string
-          default: ''
-        ToolId:
+        WhoLoggedInListList:
+          type: array
+          items:
+            $ref: '#/components/schemas/WhoLoggedInList'
+        Count:
           type: integer
           example: 0
           format: int32
+    TextRecord2:
+      description: ''
+      type: object
+      properties:
+        Text:
+          type: string
+          default: ''
