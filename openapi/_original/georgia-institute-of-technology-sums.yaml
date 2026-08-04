@@ -1,0 +1,719 @@
+openapi: 3.0.3
+info:
+  title: Georgia Tech SUMS REST API
+  description: REST API published by Georgia Tech's SUMS system (Shared User Management
+    System), built on the OutSystems low-code platform. Converted faithfully from
+    the published Swagger 2.0 document at https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json.
+  version: '1'
+servers:
+- url: https://sums.gatech.edu/SUMSAPI/rest/API
+paths:
+  /Add_User_By_Username:
+    post:
+      tags:
+      - API
+      operationId: Add_User_By_Username
+      parameters:
+      - name: icalID
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: CreatorUsername
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+                default: ''
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/TextRecord'
+  /ContactForms:
+    get:
+      tags:
+      - API
+      operationId: ContactForms
+      parameters:
+      - name: TrainingTestId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      - name: APIKey
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: StartDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+          example: '2014-12-31'
+      - name: EndDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+          example: '2014-12-31'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QuestionAnswersStructure'
+  /equipmentGroup_info:
+    post:
+      tags:
+      - API
+      operationId: equipmentGroup_info
+      parameters:
+      - name: equipmentGroupId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TextLongIntegerTextTextRecord'
+  /equipmentGroup_queueGroups:
+    post:
+      tags:
+      - API
+      operationId: equipmentGroup_queueGroups
+      parameters:
+      - name: authorization
+        in: header
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: DepartmentID
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      - name: userName
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LongIntegerBooleanTextRecord'
+  /equipmentGroup_queueUsers:
+    post:
+      tags:
+      - API
+      operationId: equipmentGroup_queueUsers
+      parameters:
+      - name: authorization
+        in: header
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: DepartmentID
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      - name: userName
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BooleanBooleanIntegerTextIntegerTextIntegerTextRecord'
+  /equipmentGroup_tools:
+    post:
+      tags:
+      - API
+      operationId: equipmentGroup_tools
+      parameters:
+      - name: DepartmentID
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      - name: authorization
+        in: header
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: userName
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: Keywords
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TextTextDepartmentIdentifierTextTextRecordListTextTextLocationsIdentifierTextTextPhoneNumberTextTextTextToolIdentifierTextBooleanTextTextRecordListRecord'
+  /GetToolStatus:
+    get:
+      tags:
+      - API
+      operationId: GetToolStatus
+      parameters:
+      - name: ToolId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+                default: ''
+          headers:
+            ContentType:
+              schema:
+                type: string
+                default: ''
+  /GetTrainingReport:
+    get:
+      tags:
+      - API
+      operationId: GetTrainingReport
+      parameters:
+      - name: EGId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      - name: StartDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+          example: '2014-12-31'
+      - name: EndDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+          example: '2014-12-31'
+      - name: EGKey
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+                default: ''
+          headers:
+            ContentType:
+              schema:
+                type: string
+                default: ''
+  /GetUserNameAndEmailByBuzzCardNumber:
+    get:
+      tags:
+      - API
+      operationId: GetUserNameAndEmailByBuzzCardNumber
+      parameters:
+      - name: BuzzCardNumber
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailTextRecord'
+  /ToolCheckLoggedIn:
+    get:
+      tags:
+      - API
+      operationId: ToolCheckLoggedIn
+      parameters:
+      - name: ToolId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+                default: ''
+  /TrainingInfo:
+    get:
+      tags:
+      - API
+      operationId: TrainingInfo
+      parameters:
+      - name: EGKey
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: ToolId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TrainingInfoAPIStructure'
+  /UpdateUserTemplate:
+    post:
+      tags:
+      - API
+      operationId: UpdateUserTemplate
+      parameters:
+      - name: EGKey
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: GTUsername
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: TemplateName
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: RemoveFromTemplate
+        in: query
+        required: false
+        description: Input for removing user from template based off of GTUsername
+          and TemplateName
+        schema:
+          type: boolean
+          example: false
+      responses:
+        '200':
+          description: ErrorMessage Text
+          content:
+            text/plain:
+              schema:
+                type: string
+                default: ''
+                description: ErrorMessage Text
+          headers:
+            isSuccess:
+              schema:
+                type: boolean
+                x-example: false
+                description: Success True/False
+  /user_info:
+    get:
+      tags:
+      - API
+      operationId: user_info
+      parameters:
+      - name: userName
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: EGKey
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: EGId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+                default: ''
+          headers:
+            ContentType:
+              schema:
+                type: string
+                default: ''
+  /WhoLoggedIn:
+    get:
+      tags:
+      - API
+      operationId: WhoLoggedIn
+      parameters:
+      - name: ToolId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      - name: DateTime
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+      - name: EGKey
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: GTUsername
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntegerWhoLoggedInListListRecord'
+components:
+  schemas:
+    BooleanBooleanIntegerTextIntegerTextIntegerTextRecord:
+      description: ''
+      type: object
+      properties:
+        memberName:
+          type: string
+          default: ''
+        memberUserName:
+          type: string
+          default: ''
+        queueName:
+          type: string
+          default: ''
+        hasBeenNotified:
+          type: boolean
+          example: false
+        isGroup:
+          type: boolean
+          example: false
+        memberMinutesRemaining:
+          type: integer
+          example: 0
+          format: int32
+        memberQueueLocation:
+          type: integer
+          example: 0
+          format: int32
+        queueGroupId:
+          type: integer
+          example: 0
+          format: int32
+    EmailTextRecord:
+      description: ''
+      type: object
+      properties:
+        UserName:
+          type: string
+          default: ''
+        UserEmail:
+          type: string
+          default: ''
+    IntegerWhoLoggedInListListRecord:
+      description: ''
+      type: object
+      properties:
+        WhoLoggedInListList:
+          type: array
+          items:
+            $ref: '#/components/schemas/WhoLoggedInList'
+        Count:
+          type: integer
+          example: 0
+          format: int32
+    LongIntegerBooleanTextRecord:
+      description: ''
+      type: object
+      properties:
+        name:
+          type: string
+          default: ''
+        id:
+          type: integer
+          example: 1234567891234567
+          format: int64
+        isGroup:
+          type: boolean
+          example: false
+    QuestionAnswersStructure:
+      description: ''
+      type: object
+      properties:
+        Responder:
+          type: string
+          default: ''
+        DateTime:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+        Responses:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsesStructure'
+    ResponsesStructure:
+      description: ''
+      type: object
+      properties:
+        Question:
+          type: string
+          default: ''
+        Response:
+          type: string
+          default: ''
+    TextLongIntegerTextTextRecord:
+      description: ''
+      type: object
+      properties:
+        equipmentGroupDescriptionHtml:
+          type: string
+          default: ''
+        equipmentGroupName:
+          type: string
+          default: ''
+        equipmentGroupShortName:
+          type: string
+          default: ''
+        equipmentGroupId:
+          type: integer
+          example: 1234567891234567
+          format: int64
+    TextRecord:
+      description: ''
+      type: object
+      properties:
+        Username:
+          type: string
+          default: ''
+    TextRecord2:
+      description: ''
+      type: object
+      properties:
+        Text:
+          type: string
+          default: ''
+    ? TextTextDepartmentIdentifierTextTextRecordListTextTextLocationsIdentifierTextTextPhoneNumberTextTextTextToolIdentifierTextBooleanTextTextRecordListRecord
+    : description: ''
+      type: object
+      properties:
+        equipmentGroupId:
+          type: integer
+          example: 0
+          format: int32
+        locationId:
+          type: integer
+          example: 0
+          format: int32
+        toolId:
+          type: integer
+          example: 0
+          format: int32
+        currentUserUserName:
+          type: string
+          default: ''
+        equipmentGroupDescription:
+          type: string
+          default: ''
+        equipmentGroupName:
+          type: string
+          default: ''
+        locationAddress:
+          type: string
+          default: ''
+        locationDescription:
+          type: string
+          default: ''
+        locationManager:
+          type: string
+          default: ''
+        locationName:
+          type: string
+          default: ''
+        locationUrl:
+          type: string
+          default: ''
+        toolCurrentUser:
+          type: string
+          default: ''
+        toolDescription:
+          type: string
+          default: ''
+        toolInUseSince:
+          type: string
+          default: ''
+        toolName:
+          type: string
+          default: ''
+        locationPhone:
+          type: string
+          default: ''
+        toolIsOperational:
+          type: boolean
+          example: false
+        HeroImageURLs:
+          type: array
+          items:
+            $ref: '#/components/schemas/TextRecord2'
+        Trainers:
+          type: array
+          items:
+            $ref: '#/components/schemas/TextRecord2'
+    TrainingInfoAPIStructure:
+      description: ''
+      type: object
+      properties:
+        Training_Module_Status:
+          type: string
+          default: ''
+        Training_Module_Type:
+          type: string
+          default: ''
+        TrainingDateTime:
+          type: string
+          default: ''
+          description: For training session/checkoff, date/time marked atttended.
+            For all other training types when the training attempt was made.
+        Researcher:
+          type: string
+          default: ''
+        Tool:
+          type: string
+          default: ''
+        Training_Module_Name:
+          type: string
+          default: ''
+        isHasAccessToTool:
+          type: boolean
+          example: false
+    WhoLoggedInList:
+      description: ''
+      type: object
+      properties:
+        EndDateTime:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+        ToolName:
+          type: string
+          default: ''
+        StartDateTime:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+        ResearcherName:
+          type: string
+          default: ''
+        ToolId:
+          type: integer
+          example: 0
+          format: int32

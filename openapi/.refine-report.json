@@ -1,0 +1,14 @@
+{
+  "provider": "georgia-institute-of-technology",
+  "sources": [
+    "georgia-institute-of-technology-api-api-openapi.yml"
+  ],
+  "outputs": [
+    "georgia-institute-of-technology-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
