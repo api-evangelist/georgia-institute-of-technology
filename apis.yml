@@ -39,7 +39,7 @@ tags:
 created: '2026-06-03'
 modified: '2026-06-03'
 # artifacts added 2026-06-03: SUMS OpenAPI 3.0, schemas, structures, examples, rules, vocabulary, json-ld
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: georgia-institute-of-technology:repository-oai
   name: GT Digital Repository OAI-PMH
