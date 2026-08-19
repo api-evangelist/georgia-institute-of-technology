@@ -1,0 +1,379 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Georgia Tech SUMS REST API API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add_User_By_Username",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/Add_User_By_Username",
+            "params": [
+              {
+                "name": "icalID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CreatorUsername",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "ContactForms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/ContactForms",
+            "params": [
+              {
+                "name": "TrainingTestId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "APIKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EndDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "equipmentGroup_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/equipmentGroup_info",
+            "params": [
+              {
+                "name": "equipmentGroupId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "equipmentGroup_queueGroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/equipmentGroup_queueGroups",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "DepartmentID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "equipmentGroup_queueUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/equipmentGroup_queueUsers",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "DepartmentID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "equipmentGroup_tools",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/equipmentGroup_tools",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "DepartmentID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Keywords",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetToolStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/GetToolStatus",
+            "params": [
+              {
+                "name": "ToolId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetTrainingReport",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/GetTrainingReport",
+            "params": [
+              {
+                "name": "EGId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StartDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EndDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EGKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetUserNameAndEmailByBuzzCardNumber",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/GetUserNameAndEmailByBuzzCardNumber",
+            "params": [
+              {
+                "name": "BuzzCardNumber",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ToolCheckLoggedIn",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/ToolCheckLoggedIn",
+            "params": [
+              {
+                "name": "ToolId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "TrainingInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/TrainingInfo",
+            "params": [
+              {
+                "name": "EGKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ToolId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "UpdateUserTemplate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/UpdateUserTemplate",
+            "params": [
+              {
+                "name": "EGKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "GTUsername",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "TemplateName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "RemoveFromTemplate",
+                "value": "",
+                "type": "query",
+                "description": "Input for removing user from template based off of GTUsername and TemplateName"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "user_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/user_info",
+            "params": [
+              {
+                "name": "userName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EGKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EGId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "WhoLoggedIn",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sums.gatech.edu/SUMSAPI/rest/API/WhoLoggedIn",
+            "params": [
+              {
+                "name": "ToolId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DateTime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EGKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "GTUsername",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

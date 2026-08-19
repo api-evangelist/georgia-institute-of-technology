@@ -1,0 +1,1395 @@
+{
+  "item": [
+    {
+      "id": "9a5c0bda-d3a4-4fb4-b4da-6978f3947439",
+      "name": "API",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "578d6cce-e530-43de-af4d-14ca73beacd2",
+          "name": "Add User By Username",
+          "request": {
+            "name": "Add User By Username",
+            "description": {},
+            "url": {
+              "path": [
+                "Add_User_By_Username"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "icalID",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "CreatorUsername",
+                  "value": "",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"Username\": \"\"\n  },\n  {\n    \"Username\": \"\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dbfdf2ee-1d39-447e-b0b6-f818e21eeadb",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Add_User_By_Username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "icalID",
+                      "value": ""
+                    },
+                    {
+                      "key": "CreatorUsername",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"Username\": \"\"\n  },\n  {\n    \"Username\": \"\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a90e5588-7253-4ad0-97a1-78e8ac14242b",
+          "name": "Contact Forms",
+          "request": {
+            "name": "Contact Forms",
+            "description": {},
+            "url": {
+              "path": [
+                "ContactForms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "TrainingTestId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "APIKey",
+                  "value": "",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "StartDate",
+                  "value": "<date>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "EndDate",
+                  "value": "<date>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c6fd1cc-8d47-4d2a-81b8-4af492c7ca73",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ContactForms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "TrainingTestId",
+                      "value": "0"
+                    },
+                    {
+                      "key": "APIKey",
+                      "value": ""
+                    },
+                    {
+                      "key": "StartDate",
+                      "value": "2014-12-31"
+                    },
+                    {
+                      "key": "EndDate",
+                      "value": "2014-12-31"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"Responder\": \"\",\n    \"DateTime\": \"2014-12-31T23:59:59.938Z\",\n    \"Responses\": [\n      {\n        \"Question\": \"\",\n        \"Response\": \"\"\n      },\n      {\n        \"Question\": \"\",\n        \"Response\": \"\"\n      }\n    ]\n  },\n  {\n    \"Responder\": \"\",\n    \"DateTime\": \"2014-12-31T23:59:59.938Z\",\n    \"Responses\": [\n      {\n        \"Question\": \"\",\n        \"Response\": \"\"\n      },\n      {\n        \"Question\": \"\",\n        \"Response\": \"\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "244c606f-a349-43fd-9dbe-ecb24fd9beec",
+          "name": "equipment Group info",
+          "request": {
+            "name": "equipment Group info",
+            "description": {},
+            "url": {
+              "path": [
+                "equipmentGroup_info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "equipmentGroupId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ba0302c-ef39-4865-9cad-79946e546644",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "equipmentGroup_info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "equipmentGroupId",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"equipmentGroupDescriptionHtml\": \"\",\n  \"equipmentGroupName\": \"\",\n  \"equipmentGroupShortName\": \"\",\n  \"equipmentGroupId\": 1234567891234567\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e804400c-64f1-487f-a48a-fe77ea48d8d8",
+          "name": "equipment Group queue Groups",
+          "request": {
+            "name": "equipment Group queue Groups",
+            "description": {},
+            "url": {
+              "path": [
+                "equipmentGroup_queueGroups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "DepartmentID",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "userName",
+                  "value": "",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "08f729f2-ce93-4663-8ffb-260ca654eddb",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "equipmentGroup_queueGroups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "DepartmentID",
+                      "value": "0"
+                    },
+                    {
+                      "key": "userName",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "authorization",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"\",\n    \"id\": 1234567891234567,\n    \"isGroup\": false\n  },\n  {\n    \"name\": \"\",\n    \"id\": 1234567891234567,\n    \"isGroup\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "430f8bee-b176-4a53-b155-02f2ed325094",
+          "name": "equipment Group queue Users",
+          "request": {
+            "name": "equipment Group queue Users",
+            "description": {},
+            "url": {
+              "path": [
+                "equipmentGroup_queueUsers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "DepartmentID",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "userName",
+                  "value": "",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "81668fc3-8a4d-4790-983e-4b21fea225b0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "equipmentGroup_queueUsers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "DepartmentID",
+                      "value": "0"
+                    },
+                    {
+                      "key": "userName",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "authorization",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"memberName\": \"\",\n    \"memberUserName\": \"\",\n    \"queueName\": \"\",\n    \"hasBeenNotified\": false,\n    \"isGroup\": false,\n    \"memberMinutesRemaining\": 0,\n    \"memberQueueLocation\": 0,\n    \"queueGroupId\": 0\n  },\n  {\n    \"memberName\": \"\",\n    \"memberUserName\": \"\",\n    \"queueName\": \"\",\n    \"hasBeenNotified\": false,\n    \"isGroup\": false,\n    \"memberMinutesRemaining\": 0,\n    \"memberQueueLocation\": 0,\n    \"queueGroupId\": 0\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d057371b-b469-43bf-8aa3-fdd3672c09ae",
+          "name": "equipment Group tools",
+          "request": {
+            "name": "equipment Group tools",
+            "description": {},
+            "url": {
+              "path": [
+                "equipmentGroup_tools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "DepartmentID",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "userName",
+                  "value": "",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "Keywords",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "224b9353-91e5-4a7a-8a48-efe0f49c5f45",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "equipmentGroup_tools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "DepartmentID",
+                      "value": "0"
+                    },
+                    {
+                      "key": "userName",
+                      "value": ""
+                    },
+                    {
+                      "key": "Keywords",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "authorization",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"equipmentGroupId\": 0,\n    \"locationId\": 0,\n    \"toolId\": 0,\n    \"currentUserUserName\": \"\",\n    \"equipmentGroupDescription\": \"\",\n    \"equipmentGroupName\": \"\",\n    \"locationAddress\": \"\",\n    \"locationDescription\": \"\",\n    \"locationManager\": \"\",\n    \"locationName\": \"\",\n    \"locationUrl\": \"\",\n    \"toolCurrentUser\": \"\",\n    \"toolDescription\": \"\",\n    \"toolInUseSince\": \"\",\n    \"toolName\": \"\",\n    \"locationPhone\": \"\",\n    \"toolIsOperational\": false,\n    \"HeroImageURLs\": [\n      {\n        \"Text\": \"\"\n      },\n      {\n        \"Text\": \"\"\n      }\n    ],\n    \"Trainers\": [\n      {\n        \"Text\": \"\"\n      },\n      {\n        \"Text\": \"\"\n      }\n    ]\n  },\n  {\n    \"equipmentGroupId\": 0,\n    \"locationId\": 0,\n    \"toolId\": 0,\n    \"currentUserUserName\": \"\",\n    \"equipmentGroupDescription\": \"\",\n    \"equipmentGroupName\": \"\",\n    \"locationAddress\": \"\",\n    \"locationDescription\": \"\",\n    \"locationManager\": \"\",\n    \"locationName\": \"\",\n    \"locationUrl\": \"\",\n    \"toolCurrentUser\": \"\",\n    \"toolDescription\": \"\",\n    \"toolInUseSince\": \"\",\n    \"toolName\": \"\",\n    \"locationPhone\": \"\",\n    \"toolIsOperational\": false,\n    \"HeroImageURLs\": [\n      {\n        \"Text\": \"\"\n      },\n      {\n        \"Text\": \"\"\n      }\n    ],\n    \"Trainers\": [\n      {\n        \"Text\": \"\"\n      },\n      {\n        \"Text\": \"\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52f759c9-f965-4d26-b5ca-54ac95d2ba6c",
+          "name": "Get Tool Status",
+          "request": {
+            "name": "Get Tool Status",
+            "description": {},
+            "url": {
+              "path": [
+                "GetToolStatus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ToolId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a61d2b34-2887-47f8-ad6a-c25f7411d319",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GetToolStatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ToolId",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "ContentType",
+                  "value": "",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3c51cd46-fa6f-47ae-aab4-5c62b1d2022a",
+          "name": "Get Training Report",
+          "request": {
+            "name": "Get Training Report",
+            "description": {},
+            "url": {
+              "path": [
+                "GetTrainingReport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "EGId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "StartDate",
+                  "value": "<date>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "EndDate",
+                  "value": "<date>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "EGKey",
+                  "value": "",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be738984-1d7f-440e-8aa6-2926dddff61f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GetTrainingReport"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "EGId",
+                      "value": "0"
+                    },
+                    {
+                      "key": "StartDate",
+                      "value": "2014-12-31"
+                    },
+                    {
+                      "key": "EndDate",
+                      "value": "2014-12-31"
+                    },
+                    {
+                      "key": "EGKey",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "ContentType",
+                  "value": "",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c984df64-c7f2-4d84-bda0-fd339bef0bc3",
+          "name": "Get User Name And Email By Buzz Card Number",
+          "request": {
+            "name": "Get User Name And Email By Buzz Card Number",
+            "description": {},
+            "url": {
+              "path": [
+                "GetUserNameAndEmailByBuzzCardNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "BuzzCardNumber",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2eb7c9b3-080b-4325-974e-a29ebcfb72a8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GetUserNameAndEmailByBuzzCardNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "BuzzCardNumber",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"UserName\": \"\",\n  \"UserEmail\": \"\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8bfc7ce4-b830-4678-8b79-1e8c56b35ca8",
+          "name": "Tool Check Logged In",
+          "request": {
+            "name": "Tool Check Logged In",
+            "description": {},
+            "url": {
+              "path": [
+                "ToolCheckLoggedIn"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ToolId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ae1f5f8-cc7c-45fb-bfc5-413f99fd16b9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ToolCheckLoggedIn"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ToolId",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1f613308-5ed0-4188-bafa-1c5a84fea126",
+          "name": "Training Info",
+          "request": {
+            "name": "Training Info",
+            "description": {},
+            "url": {
+              "path": [
+                "TrainingInfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "EGKey",
+                  "value": "",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "ToolId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31054ea7-a1f9-4f9a-9b89-d39454e7bcea",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TrainingInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "EGKey",
+                      "value": ""
+                    },
+                    {
+                      "key": "ToolId",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"Training_Module_Status\": \"\",\n    \"Training_Module_Type\": \"\",\n    \"TrainingDateTime\": \"\",\n    \"Researcher\": \"\",\n    \"Tool\": \"\",\n    \"Training_Module_Name\": \"\",\n    \"isHasAccessToTool\": false\n  },\n  {\n    \"Training_Module_Status\": \"\",\n    \"Training_Module_Type\": \"\",\n    \"TrainingDateTime\": \"\",\n    \"Researcher\": \"\",\n    \"Tool\": \"\",\n    \"Training_Module_Name\": \"\",\n    \"isHasAccessToTool\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78ad79a4-9856-45ef-be94-0de30c81794b",
+          "name": "Update User Template",
+          "request": {
+            "name": "Update User Template",
+            "description": {},
+            "url": {
+              "path": [
+                "UpdateUserTemplate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "EGKey",
+                  "value": "",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "GTUsername",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "TemplateName",
+                  "value": "",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "RemoveFromTemplate",
+                  "value": "<boolean>",
+                  "description": "Input for removing user from template based off of GTUsername and TemplateName"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "321b80b9-218b-409c-a0c2-908342e54b75",
+              "name": "ErrorMessage Text",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "UpdateUserTemplate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "EGKey",
+                      "value": ""
+                    },
+                    {
+                      "key": "GTUsername",
+                      "value": ""
+                    },
+                    {
+                      "key": "TemplateName",
+                      "value": ""
+                    },
+                    {
+                      "key": "RemoveFromTemplate",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "isSuccess",
+                  "value": "false",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cb495c7-41c7-48cf-b98f-2f376bd69c00",
+          "name": "user info",
+          "request": {
+            "name": "user info",
+            "description": {},
+            "url": {
+              "path": [
+                "user_info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "userName",
+                  "value": "",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "EGKey",
+                  "value": "",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "EGId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "44d1ee08-41a7-4f34-bc77-f7daa8a059b1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user_info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "userName",
+                      "value": ""
+                    },
+                    {
+                      "key": "EGKey",
+                      "value": ""
+                    },
+                    {
+                      "key": "EGId",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "ContentType",
+                  "value": "",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c4d7195-87e7-40a6-9250-325c7bc94cc6",
+          "name": "Who Logged In",
+          "request": {
+            "name": "Who Logged In",
+            "description": {},
+            "url": {
+              "path": [
+                "WhoLoggedIn"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ToolId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "DateTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "EGKey",
+                  "value": "",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "GTUsername",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd249c8e-f3f6-4491-b4fc-c835fe40a0a4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "WhoLoggedIn"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ToolId",
+                      "value": "0"
+                    },
+                    {
+                      "key": "DateTime",
+                      "value": "2014-12-31T23:59:59.938Z"
+                    },
+                    {
+                      "key": "EGKey",
+                      "value": ""
+                    },
+                    {
+                      "key": "GTUsername",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"WhoLoggedInListList\": [\n    {\n      \"EndDateTime\": \"2014-12-31T23:59:59.938Z\",\n      \"ToolName\": \"\",\n      \"StartDateTime\": \"2014-12-31T23:59:59.938Z\",\n      \"ResearcherName\": \"\",\n      \"ToolId\": 0\n    },\n    {\n      \"EndDateTime\": \"2014-12-31T23:59:59.938Z\",\n      \"ToolName\": \"\",\n      \"StartDateTime\": \"2014-12-31T23:59:59.938Z\",\n      \"ResearcherName\": \"\",\n      \"ToolId\": 0\n    }\n  ],\n  \"Count\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://sums.gatech.edu/SUMSAPI/rest/API",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5ca8aad1-3b48-42b4-a7ad-6ecae8a6c862",
+    "name": "Georgia Tech SUMS REST API API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API published by Georgia Tech's SUMS system (Shared User Management System), built on the OutSystems low-code platform. Converted faithfully from the published Swagger 2.0 document at https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json.",
+      "type": "text/plain"
+    }
+  }
+}
