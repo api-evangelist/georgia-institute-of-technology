@@ -113,7 +113,8 @@ apis:
   description: The API API from Georgia Institute of Technology — 14 operation(s) for api.
   humanURL: https://repository.gatech.edu/
   baseURL: https://repository.gatech.edu/server/oai/request
-  tags:
+  tags: []
+  tags_raw:
   - API
   properties:
   - type: OpenAPI
