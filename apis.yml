@@ -12,6 +12,18 @@ description: >-
   credentialed BuzzAPI (api.gatech.edu) plus CAS/Shibboleth single sign-on. The
   official open-source GitHub organization is github.com/gatech.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: unknown
