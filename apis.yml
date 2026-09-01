@@ -1,16 +1,25 @@
 ---
 aid: georgia-institute-of-technology
 name: Georgia Institute of Technology
+x-type: university
+x-category: Institute of Technology
 description: >-
-  Georgia Institute of Technology (Georgia Tech) is a public research university
-  in Atlanta, Georgia, United States, ranked #114 in the QS World University
-  Rankings 2025. Its public developer/API footprint is modest and partly gated:
-  the Georgia Tech Library Digital Repository (DSpace 7) exposes a public OAI-PMH
-  metadata interface and a public DSpace REST API, the Research Network
-  Operations Center (RNOC) documents a public GT Places API for campus building
-  and office data, and the Office of Information Technology operates the
-  credentialed BuzzAPI (api.gatech.edu) plus CAS/Shibboleth single sign-on. The
-  official open-source GitHub organization is github.com/gatech.
+  Georgia Institute of Technology (Georgia Tech) is a public technological research university in
+  Atlanta, Georgia, United States. Its programmable footprint is real but small, decentralized, and
+  operated by individual units rather than by any central API program: there is no developer portal,
+  no self-service key issuance, and no published OpenAPI anywhere on a gatech.edu host that Georgia
+  Tech itself indexes. What does exist, and what was verified live on 2026-09-01, is four
+  institution-operated machine surfaces — an OAI-PMH 2.0 provider and a DSpace 7.6 REST API on
+  repository.gatech.edu (the Georgia Tech Digital Repository), a Shibboleth SAML 2.0 identity
+  provider registered in InCommon and scoped gatech.edu, and a CourseLeaf course-data endpoint on
+  catalog.gatech.edu — plus two contracts Georgia Tech units publish as documents: the SUMS
+  (Shared User Management System) Swagger on sums.gatech.edu and the RNOC GT Places API Swagger on
+  rnoc.gatech.edu. Georgia Tech is a DataCite direct member (symbol GT, prefix 10.35090) and is
+  registered in ROR as 01zkghx44. Two things the profile has to say plainly: GT Places is documented
+  as "open to all" but its declared host now answers with a Microsoft Entra ID sign-in redirect, and
+  the enterprise integration API BuzzAPI (api.gatech.edu) lost its public documentation when
+  webmasters.gatech.edu was rebuilt in 2026, so it is a credentialed surface with nothing public left
+  to read.
 type: Index
 deliveryModel:
   model: saas
@@ -41,25 +50,36 @@ access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/georgia-institute-of-technology.png
 url: https://raw.githubusercontent.com/api-evangelist/georgia-institute-of-technology/refs/heads/main/apis.yml
 tags:
-  - Education
-  - Higher Education
   - University
-  - Research
-  - Open Data
-  - Library
+  - Higher Education
+  - Education
   - United States
+  - Institute of Technology
+  - Public Research University
+  - Research Repository
+  - Identity Federation
+  - Course Catalog
+  - Library
+  - Open Data
+  - Research
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 # artifacts added 2026-06-03: SUMS OpenAPI 3.0, schemas, structures, examples, rules, vocabulary, json-ld
+# 2026-09-01 university pipeline: operator axis stamped on every surface, GT Places contract harvested
+#   from RNOC, education-regime conformance probed, two dead BuzzAPI handbook pointers removed.
 specificationVersion: '0.23'
 apis:
 - aid: georgia-institute-of-technology:repository-oai
   name: GT Digital Repository OAI-PMH
+  x-operator: institution
   description: >-
-    Public OAI-PMH 2.0 metadata harvesting interface for the Georgia Tech Digital Repository (DSpace 7),
-    the institutional repository for theses, dissertations, publications, and other scholarly output.
-    Verified live; Identify response names the repository "Georgia Tech Digital Repository" with earliest
-    datestamp 2004-07-21.
+    Public OAI-PMH 2.0 metadata harvesting interface for the Georgia Tech Digital Repository, the
+    institutional repository for theses, dissertations, publications, and other scholarly output.
+    Re-verified live 2026-09-01: verb=Identify returns repositoryName "Georgia Tech Digital
+    Repository", repositoryIdentifier repository.gatech.edu, earliest datestamp 2004-07-21;
+    verb=ListMetadataFormats returns twelve prefixes (oai_dc, qdc, mods, mets, didl, ore, rdf, marc,
+    xoai, dim, etdms, uketd_dc). The host is Georgia Tech's own; the repository software is DSpace,
+    whose product contract belongs in DSpace's repo, not here.
   humanURL: https://repository.gatech.edu/
   baseURL: https://repository.gatech.edu/server/oai/request
   tags:
@@ -74,9 +94,15 @@ apis:
     url: https://repository.gatech.edu/
 - aid: georgia-institute-of-technology:repository-rest
   name: GT Digital Repository REST API
+  x-operator: institution
   description: >-
-    DSpace 7 REST API for the Georgia Tech Digital Repository, providing programmatic access to communities,
-    collections, items, and bitstreams. The API root at /server/api responds HTTP 200 (public, read access).
+    DSpace 7.6 REST API for the Georgia Tech Digital Repository, providing programmatic read access
+    to communities, collections, items and bitstreams. Re-verified 2026-09-01: /server/api returns
+    200 application/hal+json reporting dspaceName "Georgia Tech Digital Repository" and
+    dspaceVersion "DSpace 7.6"; /server/api/core/communities returns 200 (7,091 bytes) anonymously.
+    No OpenAPI is published for it — /server/api/openapi.json returns 404 — and none has been
+    generated here, because a DSpace contract is shared by every DSpace deployment and is not
+    Georgia Tech's engineering.
   humanURL: https://repository.gatech.edu/
   baseURL: https://repository.gatech.edu/server/api
   tags:
@@ -90,11 +116,18 @@ apis:
     url: https://repository.gatech.edu/
 - aid: georgia-institute-of-technology:gt-places
   name: GT Places API
+  x-operator: institution
   description: >-
-    Documented by the Georgia Tech Research Network Operations Center (RNOC), the GT Places API provides
-    access to campus place information including offices and buildings with names, addresses, phone numbers,
-    images, categories, and GPS coordinates. RNOC describes it as openly accessible.
+    Campus place data — buildings, offices, categories and community tags with names, addresses,
+    phone numbers, images and GPS coordinates — documented and published by the Georgia Tech Research
+    Network Operations Center (RNOC), which serves a Swagger 2.0 contract from its own host at
+    /sites/default/files/gtplaces_6.yaml (200 text/plain, harvested 2026-09-01). The documentation
+    page states "This API is open to all" and "The Api is currently live". Probed the same day, the
+    declared base host m.gatech.edu returns a ~23 KB Microsoft Entra ID sign-in page to every
+    request, so the contract is readable but the deployment is now gated. Recorded as documented,
+    not as callable.
   humanURL: https://rnoc.gatech.edu/gt-places-api
+  baseURL: https://m.gatech.edu/api
   tags:
   - Places
   - Campus
@@ -104,28 +137,29 @@ apis:
   properties:
   - type: Documentation
     url: https://rnoc.gatech.edu/gt-places-api
-- aid: georgia-institute-of-technology:buzzapi
-  name: BuzzAPI
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-gtplaces-openapi.yml
+  - type: Swagger
+    url: https://rnoc.gatech.edu/sites/default/files/gtplaces_6.yaml
+- aid: georgia-institute-of-technology:sums
+  name: Georgia Tech SUMS REST API
+  x-operator: institution
   description: >-
-    Georgia Tech's enterprise integration API (BuzzAPI v3), operated by the Office of Information Technology
-    at api.gatech.edu with a test environment at test.api.gatech.edu. Access requires institutional credentials;
-    the apiv3 root is not publicly browsable (returns 404 without auth) and the developers handbook documenting
-    it sits behind CAS single sign-on.
-  humanURL: https://webmasters.gatech.edu/handbook/developers
+    The Shared User Management System (SUMS) REST API, operated by Georgia Tech at sums.gatech.edu to
+    manage researcher access to shared lab instruments, training records, equipment-group queues and
+    BuzzCard identity lookups. Georgia Tech publishes the Swagger 2.0 document itself at
+    /SUMSAPI/rest/API/swagger.json (200, re-verified 2026-09-01); the OpenAPI here is converted from
+    it and the pristine copy is kept in openapi/_original/. Built on the OutSystems low-code platform
+    but hosted on Georgia Tech's own domain and describing Georgia Tech's own system. Most operations
+    require an APIKey query parameter with no public issuance path.
+  humanURL: https://sums.gatech.edu/SUMSAPI/rest/API/
+  baseURL: https://sums.gatech.edu/SUMSAPI/rest/API
   tags:
-  - Enterprise
-  - Integration
-  - Authentication
-  - Gated
-  properties:
-  - type: Documentation
-    url: https://webmasters.gatech.edu/handbook/buzzapi-v3-example
-- aid: georgia-institute-of-technology:georgia-institute-of-technology-api-api
-  name: Georgia Institute of Technology API API
-  description: The API API from Georgia Institute of Technology — 14 operation(s) for api.
-  humanURL: https://repository.gatech.edu/
-  baseURL: https://repository.gatech.edu/server/oai/request
-  tags: []
+  - Research Computing
+  - Laboratory
+  - Equipment
+  - Training
+  - Identity
   tags_raw:
   - API
   properties:
@@ -147,15 +181,139 @@ apis:
     url: vocabulary/georgia-institute-of-technology-vocabulary.yml
   - type: x-json-ld
     url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:buzzapi
+  name: BuzzAPI
+  x-operator: institution
+  description: >-
+    Georgia Tech's enterprise integration API (BuzzAPI v3), operated by the Office of Information
+    Technology at api.gatech.edu with a test environment at test.api.gatech.edu. Access requires an
+    institutional credential. Probed 2026-09-01: api.gatech.edu, api.gatech.edu/apiv3 and
+    test.api.gatech.edu all return 404 application/json to an anonymous client — a gateway answering,
+    not a dead host. The developers handbook that documented BuzzAPI on webmasters.gatech.edu was
+    removed when that site was rebuilt in 2026 (the site says so on its own front page); both former
+    documentation URLs now 404 and the site's search returns "Access denied" to anonymous users, so
+    those two pointers have been removed rather than left standing as claims. No public BuzzAPI
+    documentation could be found anywhere on 2026-09-01.
+  humanURL: https://oit.gatech.edu/
+  baseURL: https://api.gatech.edu/apiv3
+  tags:
+  - Enterprise
+  - Integration
+  - Authentication
+  - Gated
+  properties:
+  - type: Authentication
+    url: authentication/georgia-institute-of-technology-authentication.yml
+- aid: georgia-institute-of-technology:shibboleth-idp
+  name: Georgia Tech Shibboleth Identity Provider (InCommon)
+  x-operator: federation
+  description: >-
+    Georgia Tech's own SAML 2.0 / Shibboleth identity provider, entityID
+    https://idp.gatech.edu/idp/shibboleth, registered in the InCommon federation and reachable
+    through its per-entity metadata service. Verified 2026-09-01: InCommon MDQ returns 200
+    application/samlmetadata+xml (9,062 bytes, signed) with mdui:DisplayName "Georgia Institute of
+    Technology", shibmd:Scope gatech.edu, an IDPSSODescriptor and an AttributeAuthorityDescriptor;
+    the IdP publishes the same metadata directly at https://idp.gatech.edu/idp/shibboleth (200
+    text/xml); and https://idp.gatech.edu/idp/profile/SAML2/Redirect/SSO returns 400 to a bare GET,
+    which is a live Shibboleth IdP rejecting a malformed AuthnRequest. A federation is shared by
+    definition — the IdP behind it is Georgia Tech's.
+  humanURL: https://mdq.incommon.org/entities/https%3A%2F%2Fidp.gatech.edu%2Fidp%2Fshibboleth
+  baseURL: https://idp.gatech.edu/idp/shibboleth
+  tags:
+  - Identity Federation
+  - Shibboleth
+  - SAML
+  - InCommon
+  - Single Sign-On
+  properties:
+  - type: Documentation
+    url: https://mdq.incommon.org/entities/https%3A%2F%2Fidp.gatech.edu%2Fidp%2Fshibboleth
+  - type: Conformance
+    url: conformance/georgia-institute-of-technology-conformance.yml
+- aid: georgia-institute-of-technology:course-catalog
+  name: Georgia Tech Course Catalog Data (CourseLeaf)
+  x-operator: institution
+  x-platform: CourseLeaf (Leepfrog Technologies)
+  description: >-
+    Course and curriculum data for the Georgia Tech catalog, served as XML from the institution's own
+    host through the CourseLeaf "ribbit" data endpoint. Verified 2026-09-01:
+    https://catalog.gatech.edu/ribbit/?page=getcourse.rjs&subject=CS returns 200 text/xml, 158,016
+    bytes of course records. The catalog software is Leepfrog's CourseLeaf, so no vendor contract is
+    saved here; the deployment, the host and the data are Georgia Tech's. There is no documented,
+    versioned API around it — it is an undeclared data endpoint, recorded as one.
+  humanURL: https://catalog.gatech.edu/
+  baseURL: https://catalog.gatech.edu/ribbit/
+  tags:
+  - Course Catalog
+  - Registrar
+  - Curriculum
+  - Open Data
+  properties:
+  - type: Documentation
+    url: https://catalog.gatech.edu/
+- aid: georgia-institute-of-technology:datacite
+  name: DataCite membership (provider GT, prefix 10.35090)
+  x-operator: registry
+  description: >-
+    Georgia Tech is a DataCite direct member. Verified 2026-09-01: https://api.datacite.org/providers/gt
+    returns symbol GT, name "Georgia Institute of Technology", memberType direct_member, rorId
+    https://ror.org/01zkghx44, created 2020-06-22; the single repository under it is gt.ir "Georgia
+    Tech Digital Repository" (https://repository.gatech.edu/); its prefix is 10.35090, against which
+    463 DOIs are minted, resolving into Georgia Tech's own repository. This is a membership fact
+    about the institution, not a contract — DataCite's own API contract is DataCite's.
+  humanURL: https://api.datacite.org/providers/gt
+  tags:
+  - DataCite
+  - DOI
+  - Research Data
+  - Registry
+  properties:
+  - type: Documentation
+    url: https://api.datacite.org/providers/gt
+- aid: georgia-institute-of-technology:ror
+  name: ROR registration (01zkghx44)
+  x-operator: registry
+  description: >-
+    Georgia Institute of Technology is registered in the Research Organization Registry as
+    https://ror.org/01zkghx44, with declared domain gatech.edu, established 1885, and external ids
+    including GRID grid.213917.f, ISNI 0000 0001 2097 4943, Wikidata Q864855 and Crossref Funder ID
+    100006778. Verified 2026-09-01 via https://api.ror.org/v2/organizations. A registry membership,
+    recorded as a fact about the institution; the ROR API contract is ROR's.
+  humanURL: https://ror.org/01zkghx44
+  tags:
+  - ROR
+  - Research Organization Registry
+  - Identifiers
+  - Registry
+  properties:
+  - type: Documentation
+    url: https://ror.org/01zkghx44
+- aid: georgia-institute-of-technology:canvas
+  name: Canvas LMS (Instructure tenant)
+  x-operator: tenant
+  description: >-
+    Georgia Tech's learning management system is Canvas, running as an Instructure-hosted tenant at
+    gatech.instructure.com (200 on 2026-09-01, titled "GT | GT Login") with an institutional alias at
+    canvas.gatech.edu (200). Both are behind Georgia Tech SSO. The tenancy is a real institutional
+    fact and is recorded here; Instructure's Canvas LTI/REST contracts are Instructure's engineering
+    and are deliberately not saved under this institution.
+  humanURL: https://canvas.gatech.edu/
+  baseURL: https://gatech.instructure.com
+  tags:
+  - Learning Management System
+  - Canvas
+  - Instructure
+  - Tenant
+  properties:
+  - type: Documentation
+    url: https://canvas.gatech.edu/
 common:
-  - type: AgenticAccess
-    url: agentic-access/georgia-institute-of-technology-agentic-access.yml
-  - type: DomainSecurity
-    url: security/georgia-institute-of-technology-domain-security.yml
   - type: Website
     url: https://www.gatech.edu/
   - type: GitHub
     url: https://github.com/gatech
+  - type: GitHubOrganization
+    url: https://github.com/gt-ospo
   - type: LinkedIn
     url: https://www.linkedin.com/school/georgia-institute-of-technology/
   - type: DeveloperPortal
@@ -164,6 +322,38 @@ common:
     url: https://ospo.cc.gatech.edu/github-resources/
   - type: Authentication
     url: https://sso.gatech.edu/
+  - type: ResearchRepository
+    url: https://repository.gatech.edu/
+  - type: IdentityFederation
+    url: https://mdq.incommon.org/entities/https%3A%2F%2Fidp.gatech.edu%2Fidp%2Fshibboleth
+  - type: CourseCatalog
+    url: https://catalog.gatech.edu/
+  - type: LibraryCatalog
+    url: https://library.gatech.edu/
+  - type: AIPolicy
+    url: https://oit.gatech.edu/ai/guidance
+  - type: AIGovernance
+    url: https://oit.gatech.edu/governance/ai
+  - type: AITooling
+    url: https://oit.gatech.edu/ai/tools
+  - type: Status
+    url: https://status.gatech.edu/
+  - type: Support
+    url: https://gatech.service-now.com/technology
+  - type: Blog
+    url: https://news.gatech.edu/
+  - type: TermsOfService
+    url: https://www.gatech.edu/legal
+  - type: PrivacyPolicy
+    url: https://www.gatech.edu/privacy
+  - type: AgenticAccess
+    url: agentic-access/georgia-institute-of-technology-agentic-access.yml
+  - type: DomainSecurity
+    url: security/georgia-institute-of-technology-domain-security.yml
+  - type: Conformance
+    url: conformance/georgia-institute-of-technology-conformance.yml
+  - type: x-authentication
+    url: authentication/georgia-institute-of-technology-authentication.yml
   - type: Plans
     url: plans/georgia-institute-of-technology-plans-pricing.yml
   - type: RateLimits
@@ -172,6 +362,97 @@ common:
     url: finops/georgia-institute-of-technology-finops.yml
   - type: Review
     url: review.yml
+x-coverage:
+  state: covered
+  reason: covered
+  detail: >-
+    Four institution-operated machine surfaces were verified live on 2026-09-01 — an OAI-PMH 2.0
+    provider and a DSpace 7.6 REST API on repository.gatech.edu, a Shibboleth SAML 2.0 identity
+    provider registered in InCommon and scoped gatech.edu, and a CourseLeaf course-data endpoint on
+    catalog.gatech.edu returning 158 KB of XML — plus two Georgia-Tech-published contracts: the SUMS
+    Swagger on sums.gatech.edu (already held) and the RNOC GT Places Swagger, newly harvested from
+    rnoc.gatech.edu. Five education-regime domain standards are evidenced from public endpoints
+    (oai-pmh, shibboleth, saml, orcid, datacite); crossref, scim, lti, oneroster, ed-fi, caliper and
+    qti are recorded as negative with the probe that established each. No vendor contract is
+    attributed to Georgia Tech: the Canvas LMS is recorded as an Instructure tenancy and no
+    Instructure spec is saved, DSpace's product contract is left to DSpace, and CourseLeaf's to
+    Leepfrog. Two honest negatives dominate the shape of this profile. GT Places is documented by
+    RNOC as "open to all" yet its declared host m.gatech.edu now returns a Microsoft Entra ID
+    sign-in page to every request, so a contract that reads as public describes a deployment that is
+    not. And BuzzAPI, the institution's actual enterprise API, lost all public documentation when
+    webmasters.gatech.edu was rebuilt in 2026 — both handbook URLs now 404 and the site's search is
+    access-denied to anonymous users — so the two dead pointers were removed rather than left
+    standing. There is no central developer portal, no self-service key issuance, no llms.txt and no
+    security.txt anywhere on gatech.edu.
+  generated: '2026-09-01'
+  method: probed
+  evidence:
+  - url: https://repository.gatech.edu/server/oai/request?verb=Identify
+    status: 200
+  - url: https://repository.gatech.edu/server/oai/request?verb=ListMetadataFormats
+    status: 200
+  - url: https://repository.gatech.edu/server/oai/request?verb=ListSets
+    status: 200
+  - url: https://repository.gatech.edu/server/api
+    status: 200
+  - url: https://repository.gatech.edu/server/api/core/communities
+    status: 200
+  - url: https://repository.gatech.edu/server/api/config/properties/orcid.application-client-id
+    status: 200
+  - url: https://repository.gatech.edu/server/api/openapi.json
+    status: 404
+  - url: https://mdq.incommon.org/entities/https%3A%2F%2Fidp.gatech.edu%2Fidp%2Fshibboleth
+    status: 200
+  - url: https://idp.gatech.edu/idp/shibboleth
+    status: 200
+  - url: https://idp.gatech.edu/idp/profile/SAML2/Redirect/SSO
+    status: 400
+  - url: https://sso.gatech.edu/cas/login
+    status: 200
+  - url: https://catalog.gatech.edu/ribbit/?page=getcourse.rjs&subject=CS
+    status: 200
+  - url: https://rnoc.gatech.edu/gt-places-api
+    status: 200
+  - url: https://rnoc.gatech.edu/sites/default/files/gtplaces_6.yaml
+    status: 200
+  - url: https://m.gatech.edu/api/gtplaces/buildings/
+    status: 200
+  - url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+    status: 200
+  - url: https://api.gatech.edu/apiv3
+    status: 404
+  - url: https://test.api.gatech.edu/
+    status: 404
+  - url: https://webmasters.gatech.edu/handbook/developers
+    status: 404
+  - url: https://webmasters.gatech.edu/handbook/buzzapi-v3-example
+    status: 404
+  - url: https://api.datacite.org/providers/gt
+    status: 200
+  - url: https://api.datacite.org/clients?provider-id=gt
+    status: 200
+  - url: https://api.datacite.org/prefixes?client-id=gt.ir
+    status: 200
+  - url: https://api.crossref.org/members?query=georgia+institute+of+technology
+    status: 200
+  - url: https://api.ror.org/v2/organizations?query=Georgia%20Institute%20of%20Technology
+    status: 200
+  - url: https://gatech.instructure.com/
+    status: 200
+  - url: https://canvas.gatech.edu/
+    status: 200
+  - url: https://oit.gatech.edu/ai/guidance
+    status: 200
+  - url: https://oit.gatech.edu/ai/tools
+    status: 200
+  - url: https://oit.gatech.edu/governance/ai
+    status: 200
+  - url: https://www.gatech.edu/llms.txt
+    status: 404
+  - url: https://www.gatech.edu/.well-known/security.txt
+    status: 404
+  - url: https://api.github.com/orgs/gatech/repos
+    status: 200
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
