@@ -188,6 +188,12 @@ apis:
   - Shibboleth
   - SAML
   - InCommon
+  - SSO
+  tags_raw:
+  - Identity Federation
+  - Shibboleth
+  - SAML
+  - InCommon
   - Single Sign-On
   properties:
   - type: Documentation
@@ -265,6 +271,11 @@ apis:
   - Learning Management System
   - Canvas
   - Instructure
+  - Tenants
+  tags_raw:
+  - Learning Management System
+  - Canvas
+  - Instructure
   - Tenant
   properties:
   - type: Documentation
@@ -275,6 +286,8 @@ apis:
   humanURL: https://repository.gatech.edu/
   baseURL: https://repository.gatech.edu/server/oai/request
   tags:
+  - Buildings
+  tags_raw:
   - buildings
   properties:
   - type: OpenAPI
@@ -289,7 +302,8 @@ apis:
     The buildings_id API from Georgia Institute of Technology — 1 operation(s) for buildings_id.
   humanURL: https://repository.gatech.edu/
   baseURL: https://repository.gatech.edu/server/oai/request
-  tags:
+  tags: []
+  tags_raw:
   - buildings_id
   properties:
   - type: OpenAPI
@@ -304,6 +318,8 @@ apis:
   humanURL: https://repository.gatech.edu/
   baseURL: https://repository.gatech.edu/server/oai/request
   tags:
+  - Categories
+  tags_raw:
   - categories
   properties:
   - type: OpenAPI
@@ -318,6 +334,8 @@ apis:
   humanURL: https://repository.gatech.edu/
   baseURL: https://repository.gatech.edu/server/oai/request
   tags:
+  - Tags
+  tags_raw:
   - tags
   properties:
   - type: OpenAPI
