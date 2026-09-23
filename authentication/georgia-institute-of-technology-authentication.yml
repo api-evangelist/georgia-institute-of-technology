@@ -1,0 +1,84 @@
+generated: '2026-09-01'
+method: probed
+source: >-
+  Live unauthenticated probes of Georgia Institute of Technology hosts on 2026-09-01. Every row below
+  records what an anonymous client actually received; nothing is inferred from documentation prose.
+note: >-
+  Georgia Tech operates no central developer portal and issues no self-service API keys on any public
+  surface. Authentication across the institution's programmable surfaces is one of three things:
+  nothing at all (the library repository), CAS/Shibboleth single sign-on for humans, or an
+  institutional credential negotiated offline (BuzzAPI, SUMS). Where a documentation page and the
+  deployed endpoint disagree, the deployed endpoint is recorded.
+surfaces:
+- name: GT Digital Repository OAI-PMH
+  base_url: https://repository.gatech.edu/server/oai/request
+  x-operator: institution
+  scheme: none
+  anonymous_access: true
+  evidence: verb=Identify, verb=ListMetadataFormats and verb=ListSets all return 200 text/xml with no credentials.
+- name: GT Digital Repository REST API (DSpace 7.6)
+  base_url: https://repository.gatech.edu/server/api
+  x-operator: institution
+  scheme: none
+  anonymous_access: true
+  evidence: >-
+    Root returns 200 application/hal+json (dspaceVersion "DSpace 7.6"); /core/communities returns 200
+    application/hal+json, 7,091 bytes. Write and administrative operations sit behind
+    /server/api/authn, which was not exercised. No OpenAPI is published — /server/api/openapi.json
+    returns 404.
+- name: GT Places API
+  base_url: https://m.gatech.edu/api
+  x-operator: institution
+  scheme: microsoft-entra-id
+  anonymous_access: false
+  evidence: >-
+    RNOC's documentation page states "This API is open to all" and "The Api is currently live", but
+    https://m.gatech.edu/api/gtplaces/buildings/ and /gtplaces/categories/ both return 200
+    text/html — a ~23 KB Microsoft Entra ID sign-in redirect page, not JSON. Documented as open,
+    deployed behind institutional SSO. The contract itself remains publicly readable at
+    https://rnoc.gatech.edu/sites/default/files/gtplaces_6.yaml (200 text/plain).
+- name: Georgia Tech SUMS REST API
+  base_url: https://sums.gatech.edu/SUMSAPI/rest/API
+  x-operator: institution
+  scheme: api-key
+  anonymous_access: false
+  evidence: >-
+    The Swagger 2.0 document at https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json is publicly
+    readable (200), and most operations declare a required `APIKey` query parameter. There is no
+    published registration or self-service issuance path for that key; it is obtained from the
+    operating unit.
+- name: BuzzAPI (api.gatech.edu)
+  base_url: https://api.gatech.edu/apiv3
+  x-operator: institution
+  scheme: institutional-credential
+  anonymous_access: false
+  evidence: >-
+    https://api.gatech.edu/, https://api.gatech.edu/apiv3 and https://test.api.gatech.edu/ all return
+    404 application/json to an unauthenticated client — a gateway responding, not a dead host. The
+    developer handbook that documented BuzzAPI at webmasters.gatech.edu was removed in that site's
+    2026 rebuild (both former URLs now 404, and the site's own search returns "Access denied" to
+    anonymous users), so no public documentation for BuzzAPI could be found on 2026-09-01.
+- name: Shibboleth Identity Provider
+  base_url: https://idp.gatech.edu/idp/shibboleth
+  x-operator: institution
+  scheme: saml2
+  anonymous_access: true
+  evidence: >-
+    Metadata is public and unauthenticated — 200 text/xml direct from the IdP, and 200
+    application/samlmetadata+xml (signed) from InCommon MDQ. The SSO endpoint itself returns 400 to a
+    parameterless GET. This is the institution's own IdP, scoped gatech.edu.
+- name: CAS single sign-on
+  base_url: https://sso.gatech.edu/cas/login
+  x-operator: institution
+  scheme: cas
+  anonymous_access: false
+  evidence: https://sso.gatech.edu/ redirects (200) to https://sso.gatech.edu/cas/login, a CAS login form.
+negative_probes:
+- url: https://www.gatech.edu/.well-known/security.txt
+  status: 404
+- url: https://gatech.edu/.well-known/security.txt
+  status: 404
+- url: https://www.gatech.edu/llms.txt
+  status: 404
+- url: https://repository.gatech.edu/server/api/openapi.json
+  status: 404

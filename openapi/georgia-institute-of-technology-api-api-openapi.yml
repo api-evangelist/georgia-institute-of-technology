@@ -1,17 +1,17 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Georgia Tech SUMS REST API API
+  title: Georgia Tech SUMS REST API
   description: REST API published by Georgia Tech's SUMS system (Shared User Management System), built on the OutSystems low-code platform. Converted faithfully from the published Swagger 2.0 document at https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json.
   version: '1'
 servers:
 - url: https://sums.gatech.edu/SUMSAPI/rest/API
 tags:
-- name: API
+- name: api
 paths:
   /Add_User_By_Username:
     post:
       tags:
-      - API
+      - api
       operationId: Add_User_By_Username
       parameters:
       - name: icalID
@@ -42,10 +42,12 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/TextRecord'
+      summary: Add user by username
+      x-summary-source: derived
   /ContactForms:
     get:
       tags:
-      - API
+      - api
       operationId: ContactForms
       parameters:
       - name: TrainingTestId
@@ -84,10 +86,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/QuestionAnswersStructure'
+      summary: Contact forms
+      x-summary-source: derived
   /equipmentGroup_info:
     post:
       tags:
-      - API
+      - api
       operationId: equipmentGroup_info
       parameters:
       - name: equipmentGroupId
@@ -104,10 +108,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TextLongIntegerTextTextRecord'
+      summary: Equipment group info
+      x-summary-source: derived
   /equipmentGroup_queueGroups:
     post:
       tags:
-      - API
+      - api
       operationId: equipmentGroup_queueGroups
       parameters:
       - name: authorization
@@ -138,10 +144,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/LongIntegerBooleanTextRecord'
+      summary: Equipment group queue groups
+      x-summary-source: derived
   /equipmentGroup_queueUsers:
     post:
       tags:
-      - API
+      - api
       operationId: equipmentGroup_queueUsers
       parameters:
       - name: authorization
@@ -172,10 +180,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/BooleanBooleanIntegerTextIntegerTextIntegerTextRecord'
+      summary: Equipment group queue users
+      x-summary-source: derived
   /equipmentGroup_tools:
     post:
       tags:
-      - API
+      - api
       operationId: equipmentGroup_tools
       parameters:
       - name: DepartmentID
@@ -212,10 +222,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TextTextDepartmentIdentifierTextTextRecordListTextTextLocationsIdentifierTextTextPhoneNumberTextTextTextToolIdentifierTextBooleanTextTextRecordListRecord'
+      summary: Equipment group tools
+      x-summary-source: derived
   /GetToolStatus:
     get:
       tags:
-      - API
+      - api
       operationId: GetToolStatus
       parameters:
       - name: ToolId
@@ -238,10 +250,12 @@ paths:
               schema:
                 type: string
                 default: ''
+      summary: Get tool status
+      x-summary-source: derived
   /GetTrainingReport:
     get:
       tags:
-      - API
+      - api
       operationId: GetTrainingReport
       parameters:
       - name: EGId
@@ -284,10 +298,12 @@ paths:
               schema:
                 type: string
                 default: ''
+      summary: Get training report
+      x-summary-source: derived
   /GetUserNameAndEmailByBuzzCardNumber:
     get:
       tags:
-      - API
+      - api
       operationId: GetUserNameAndEmailByBuzzCardNumber
       parameters:
       - name: BuzzCardNumber
@@ -304,10 +320,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EmailTextRecord'
+      summary: Get user name and email by buzz card number
+      x-summary-source: derived
   /ToolCheckLoggedIn:
     get:
       tags:
-      - API
+      - api
       operationId: ToolCheckLoggedIn
       parameters:
       - name: ToolId
@@ -325,10 +343,12 @@ paths:
               schema:
                 type: string
                 default: ''
+      summary: Tool check logged in
+      x-summary-source: derived
   /TrainingInfo:
     get:
       tags:
-      - API
+      - api
       operationId: TrainingInfo
       parameters:
       - name: EGKey
@@ -353,10 +373,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TrainingInfoAPIStructure'
+      summary: Training info
+      x-summary-source: derived
   /UpdateUserTemplate:
     post:
       tags:
-      - API
+      - api
       operationId: UpdateUserTemplate
       parameters:
       - name: EGKey
@@ -399,10 +421,12 @@ paths:
                 type: boolean
                 x-example: false
                 description: Success True/False
+      summary: Update user template
+      x-summary-source: derived
   /user_info:
     get:
       tags:
-      - API
+      - api
       operationId: user_info
       parameters:
       - name: userName
@@ -437,10 +461,12 @@ paths:
               schema:
                 type: string
                 default: ''
+      summary: User info
+      x-summary-source: derived
   /WhoLoggedIn:
     get:
       tags:
-      - API
+      - api
       operationId: WhoLoggedIn
       parameters:
       - name: ToolId
@@ -476,90 +502,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IntegerWhoLoggedInListListRecord'
+      summary: Who logged in
+      x-summary-source: derived
 components:
   schemas:
-    QuestionAnswersStructure:
+    LongIntegerBooleanTextRecord:
       description: ''
       type: object
       properties:
-        Responder:
+        name:
           type: string
           default: ''
-        DateTime:
-          type: string
-          format: date-time
-          example: '2014-12-31T23:59:59.938Z'
-        Responses:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResponsesStructure'
-    TrainingInfoAPIStructure:
-      description: ''
-      type: object
-      properties:
-        Training_Module_Status:
-          type: string
-          default: ''
-        Training_Module_Type:
-          type: string
-          default: ''
-        TrainingDateTime:
-          type: string
-          default: ''
-          description: For training session/checkoff, date/time marked atttended. For all other training types when the training attempt was made.
-        Researcher:
-          type: string
-          default: ''
-        Tool:
-          type: string
-          default: ''
-        Training_Module_Name:
-          type: string
-          default: ''
-        isHasAccessToTool:
-          type: boolean
-          example: false
-    EmailTextRecord:
-      description: ''
-      type: object
-      properties:
-        UserName:
-          type: string
-          default: ''
-        UserEmail:
-          type: string
-          default: ''
-    BooleanBooleanIntegerTextIntegerTextIntegerTextRecord:
-      description: ''
-      type: object
-      properties:
-        memberName:
-          type: string
-          default: ''
-        memberUserName:
-          type: string
-          default: ''
-        queueName:
-          type: string
-          default: ''
-        hasBeenNotified:
-          type: boolean
-          example: false
+        id:
+          type: integer
+          example: 1234567891234567
+          format: int64
         isGroup:
           type: boolean
           example: false
-        memberMinutesRemaining:
-          type: integer
-          example: 0
-          format: int32
-        memberQueueLocation:
-          type: integer
-          example: 0
-          format: int32
-        queueGroupId:
-          type: integer
-          example: 0
-          format: int32
     ResponsesStructure:
       description: ''
       type: object
@@ -568,52 +528,6 @@ components:
           type: string
           default: ''
         Response:
-          type: string
-          default: ''
-    TextLongIntegerTextTextRecord:
-      description: ''
-      type: object
-      properties:
-        equipmentGroupDescriptionHtml:
-          type: string
-          default: ''
-        equipmentGroupName:
-          type: string
-          default: ''
-        equipmentGroupShortName:
-          type: string
-          default: ''
-        equipmentGroupId:
-          type: integer
-          example: 1234567891234567
-          format: int64
-    WhoLoggedInList:
-      description: ''
-      type: object
-      properties:
-        EndDateTime:
-          type: string
-          format: date-time
-          example: '2014-12-31T23:59:59.938Z'
-        ToolName:
-          type: string
-          default: ''
-        StartDateTime:
-          type: string
-          format: date-time
-          example: '2014-12-31T23:59:59.938Z'
-        ResearcherName:
-          type: string
-          default: ''
-        ToolId:
-          type: integer
-          example: 0
-          format: int32
-    TextRecord:
-      description: ''
-      type: object
-      properties:
-        Username:
           type: string
           default: ''
     ? TextTextDepartmentIdentifierTextTextRecordListTextTextLocationsIdentifierTextTextPhoneNumberTextTextTextToolIdentifierTextBooleanTextTextRecordListRecord
@@ -682,20 +596,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TextRecord2'
-    LongIntegerBooleanTextRecord:
-      description: ''
-      type: object
-      properties:
-        name:
-          type: string
-          default: ''
-        id:
-          type: integer
-          example: 1234567891234567
-          format: int64
-        isGroup:
-          type: boolean
-          example: false
     IntegerWhoLoggedInListListRecord:
       description: ''
       type: object
@@ -708,6 +608,32 @@ components:
           type: integer
           example: 0
           format: int32
+    TrainingInfoAPIStructure:
+      description: ''
+      type: object
+      properties:
+        Training_Module_Status:
+          type: string
+          default: ''
+        Training_Module_Type:
+          type: string
+          default: ''
+        TrainingDateTime:
+          type: string
+          default: ''
+          description: For training session/checkoff, date/time marked atttended. For all other training types when the training attempt was made.
+        Researcher:
+          type: string
+          default: ''
+        Tool:
+          type: string
+          default: ''
+        Training_Module_Name:
+          type: string
+          default: ''
+        isHasAccessToTool:
+          type: boolean
+          example: false
     TextRecord2:
       description: ''
       type: object
@@ -715,3 +641,105 @@ components:
         Text:
           type: string
           default: ''
+    BooleanBooleanIntegerTextIntegerTextIntegerTextRecord:
+      description: ''
+      type: object
+      properties:
+        memberName:
+          type: string
+          default: ''
+        memberUserName:
+          type: string
+          default: ''
+        queueName:
+          type: string
+          default: ''
+        hasBeenNotified:
+          type: boolean
+          example: false
+        isGroup:
+          type: boolean
+          example: false
+        memberMinutesRemaining:
+          type: integer
+          example: 0
+          format: int32
+        memberQueueLocation:
+          type: integer
+          example: 0
+          format: int32
+        queueGroupId:
+          type: integer
+          example: 0
+          format: int32
+    EmailTextRecord:
+      description: ''
+      type: object
+      properties:
+        UserName:
+          type: string
+          default: ''
+        UserEmail:
+          type: string
+          default: ''
+    TextLongIntegerTextTextRecord:
+      description: ''
+      type: object
+      properties:
+        equipmentGroupDescriptionHtml:
+          type: string
+          default: ''
+        equipmentGroupName:
+          type: string
+          default: ''
+        equipmentGroupShortName:
+          type: string
+          default: ''
+        equipmentGroupId:
+          type: integer
+          example: 1234567891234567
+          format: int64
+    TextRecord:
+      description: ''
+      type: object
+      properties:
+        Username:
+          type: string
+          default: ''
+    WhoLoggedInList:
+      description: ''
+      type: object
+      properties:
+        EndDateTime:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+        ToolName:
+          type: string
+          default: ''
+        StartDateTime:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+        ResearcherName:
+          type: string
+          default: ''
+        ToolId:
+          type: integer
+          example: 0
+          format: int32
+    QuestionAnswersStructure:
+      description: ''
+      type: object
+      properties:
+        Responder:
+          type: string
+          default: ''
+        DateTime:
+          type: string
+          format: date-time
+          example: '2014-12-31T23:59:59.938Z'
+        Responses:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponsesStructure'

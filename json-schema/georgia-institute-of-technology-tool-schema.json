@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://repository.gatech.edu/schemas/sums-tool.schema.json",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/georgia-institute-of-technology/refs/heads/main/json-schema/georgia-institute-of-technology-tool-schema.json",
   "title": "SUMS Tool Record",
   "description": "A tool/equipment record returned by the SUMS equipmentGroup_tools operation.",
   "type": "object",

@@ -1,0 +1,35 @@
+openapi: 3.2.0
+info:
+  title: Places Categories API
+  description: This API will allow you to access the information of the places at Georgia Tech. It can be used to find out information about the offices and the buildings such as their names, addresses, phone numbers, images, categories and GPS coordinates.
+  version: 1.0.0
+servers:
+- url: https://m.gatech.edu/api
+tags:
+- name: Categories
+paths:
+  /gtplaces/categories/:
+    get:
+      description: Return lists of all categories
+      tags:
+      - Categories
+      responses:
+        200:
+          description: List of all gtplaces categories
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/categories'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/categories'
+      summary: Get gtplaces categories
+      x-summary-source: derived
+      operationId: getGtplacesCategories
+      x-operation-id-source: derived
+components:
+  schemas:
+    categories:
+      type: array
+      items:
+        type: string

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-structure.org/meta/core/v0/#",
-  "$id": "https://repository.gatech.edu/structures/SumsWhoLoggedIn.json",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/georgia-institute-of-technology/refs/heads/main/json-structure/georgia-institute-of-technology-whologgedin-structure.json",
   "name": "SumsWhoLoggedIn",
   "type": "object",
   "properties": {

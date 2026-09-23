@@ -1,0 +1,112 @@
+openapi: 3.2.0
+info:
+  title: Places Tags API
+  description: This API will allow you to access the information of the places at Georgia Tech. It can be used to find out information about the offices and the buildings such as their names, addresses, phone numbers, images, categories and GPS coordinates.
+  version: 1.0.0
+servers:
+- url: https://m.gatech.edu/api
+tags:
+- name: Tags
+paths:
+  /gtplaces/tags/:
+    get:
+      summary: Returns lists of all tags with tag id, building id, tagname, user who created…
+      description: Returns lists of all tags with tag id, building id, tagname, user who created the tag, number of tags, number of flags
+      tags:
+      - Tags
+      responses:
+        200:
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tags'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/tags'
+      operationId: getGtplacesTags
+      x-operation-id-source: derived
+  /gtplaces/buildings/{building_id}/tags/{tag_name}:
+    get:
+      description: Search tag by building
+      parameters:
+      - name: building_id
+        in: path
+        description: Building Id
+        required: true
+        schema:
+          type: string
+          format: string
+          default: '141'
+      - name: tag_name
+        in: path
+        description: Name of the tag. Refer to the 'tag_name' property in /gtplaces/tags for the up-to-date values.
+        required: true
+        schema:
+          type: string
+          format: string
+          default: '''building'''
+      tags:
+      - Tags
+      responses:
+        200:
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/buildingsbytag'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/buildingsbytag'
+      summary: Get gtplaces buildings by building id tags by tag name
+      x-summary-source: derived
+      operationId: getGtplacesBuildingsByBuildingIdTagsByTagName
+      x-operation-id-source: derived
+components:
+  schemas:
+    buildingsbytag:
+      type: object
+      properties:
+        b_id:
+          type: string
+          description: ID of the building.
+        name:
+          type: string
+          description: Name of the building.
+        address:
+          type: string
+          description: Address of the building.
+        image_url:
+          type: string
+          description: Image of the building.
+        latitute:
+          type: string
+          description: Latitute of the building.
+        longitute:
+          type: string
+          description: Longitute of the building.
+        phone_num:
+          type: string
+          description: Phone number of the building.
+        tag_name:
+          type: string
+          description: Name of the tag.
+    tags:
+      type: object
+      properties:
+        tag_id:
+          type: string
+        b_id:
+          type: string
+        tag_name:
+          type: string
+        gtuser:
+          type: string
+        auth:
+          type: string
+        times_tag:
+          type: string
+        flag_users:
+          type: string
+        times_flagged:
+          type: string

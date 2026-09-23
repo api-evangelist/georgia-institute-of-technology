@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://repository.gatech.edu/schemas/sums-whologgedin.schema.json",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/georgia-institute-of-technology/refs/heads/main/json-schema/georgia-institute-of-technology-whologgedin-schema.json",
   "title": "SUMS WhoLoggedIn Record",
   "description": "A tool login session record returned by the SUMS WhoLoggedIn operation.",
   "type": "object",

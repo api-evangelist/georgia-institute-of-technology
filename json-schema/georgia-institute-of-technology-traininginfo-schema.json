@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://repository.gatech.edu/schemas/sums-traininginfo.schema.json",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/georgia-institute-of-technology/refs/heads/main/json-schema/georgia-institute-of-technology-traininginfo-schema.json",
   "title": "SUMS TrainingInfo Record",
   "description": "A training module status record returned by the SUMS TrainingInfo operation.",
   "type": "object",

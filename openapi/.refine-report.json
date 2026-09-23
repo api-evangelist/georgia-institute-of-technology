@@ -1,14 +1,37 @@
 {
   "provider": "georgia-institute-of-technology",
   "sources": [
-    "georgia-institute-of-technology-api-api-openapi.yml"
+    "_original/georgia-institute-of-technology-gt-places.yaml",
+    "_original/georgia-institute-of-technology-sums.yaml"
   ],
   "outputs": [
+    "georgia-institute-of-technology-buildings-api-openapi.yml",
+    "georgia-institute-of-technology-buildings-id-api-openapi.yml",
+    "georgia-institute-of-technology-categories-api-openapi.yml",
+    "georgia-institute-of-technology-tags-api-openapi.yml",
     "georgia-institute-of-technology-api-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "georgia-institute-of-technology-gt-places.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "georgia-institute-of-technology-gt-places.yaml: declared missing tag: buildings",
+    "georgia-institute-of-technology-gt-places.yaml: declared missing tag: buildings_id",
+    "georgia-institute-of-technology-gt-places.yaml: declared missing tag: categories",
+    "georgia-institute-of-technology-gt-places.yaml: declared missing tag: tags",
+    "georgia-institute-of-technology-sums.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "georgia-institute-of-technology-sums.yaml: declared missing tag: API",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "_original/georgia-institute-of-technology-gtplaces-openapi.yml: archived document superseded by a larger archived document",
+    "georgia-institute-of-technology-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-buildings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-buildings-id-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

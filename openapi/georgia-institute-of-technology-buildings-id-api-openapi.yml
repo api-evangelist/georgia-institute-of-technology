@@ -1,0 +1,72 @@
+openapi: 3.2.0
+info:
+  title: Places Buildings ID API
+  description: This API will allow you to access the information of the places at Georgia Tech. It can be used to find out information about the offices and the buildings such as their names, addresses, phone numbers, images, categories and GPS coordinates.
+  version: 1.0.0
+servers:
+- url: https://m.gatech.edu/api
+tags:
+- name: buildings_id
+paths:
+  /gtplaces/buildings/{building_id}/:
+    get:
+      summary: Returns building id number
+      description: Search by building ID
+      parameters:
+      - name: building_id
+        in: path
+        description: Id of the building. Refer to the 'b_id' property in /gtplaces/buildings for the up-to-date values.
+        required: true
+        schema:
+          type: string
+          format: string
+          default: '50'
+      tags:
+      - buildings_id
+      responses:
+        200:
+          description: Soon to be updated
+          content:
+            application/json:
+              schema:
+                type: number
+                items:
+                  $ref: '#/components/schemas/buildings'
+            text/html:
+              schema:
+                type: number
+                items:
+                  $ref: '#/components/schemas/buildings'
+      operationId: getGtplacesBuildingsByBuildingId
+      x-operation-id-source: derived
+components:
+  schemas:
+    buildings:
+      type: object
+      properties:
+        b_id:
+          type: string
+          description: ID of the building.
+        name:
+          type: string
+          description: Name of the building.
+        address:
+          type: string
+          description: Address of the building.
+        image_url:
+          type: string
+          description: Image of the building.
+        latitute:
+          type: string
+          description: Latitute of the building.
+        longitute:
+          type: string
+          description: Longitute of the building.
+        phone_num:
+          type: string
+          description: Phone number of the building.
+        tag_list:
+          type: array
+          items:
+            type: string
+          description: Tags of the building.

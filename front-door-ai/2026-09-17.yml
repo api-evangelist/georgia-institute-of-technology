@@ -1,0 +1,27 @@
+# Front Door AI Index — georgia-institute-of-technology — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: georgia-institute-of-technology
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.gatech.edu
+  final_host: www.gatech.edu
+  ownership: own
+  owner: georgia-institute-of-technology
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 2
+  host_score: 2
+  density: 2.81
+  words: 712
+  tiers:
+    agentic: 0
+    core: 2
+    model: 0
+  ambiguous: 1
+  top_terms:
+    AI: 1
+    artificial intelligence: 1
+    intelligence: 1

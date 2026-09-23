@@ -1,0 +1,235 @@
+# x-archived-from: georgia-institute-of-technology-gtplaces-openapi.yml
+# x-archived-on: 2026-09-16
+openapi: 3.1.0
+info:
+  title: Places API
+  description: >-
+    Georgia Tech GT Places API. The title above is left exactly as Georgia Tech published it
+    ("Places API") so the refine/misbased audit can match this document against its
+    openapi/_original/ parent. Campus place data for the Georgia Institute of Technology — buildings, offices, categories and
+    community tags, with names, addresses, phone numbers, images and GPS coordinates. Documented and
+    published by the Georgia Tech Research Network Operations Center (RNOC), which states on the
+    documentation page that "This API is open to all" and that the API is "currently live".
+    Converted faithfully from the Swagger 2.0 document RNOC serves at
+    https://rnoc.gatech.edu/sites/default/files/gtplaces_6.yaml — the pristine copy is kept at
+    openapi/_original/georgia-institute-of-technology-gt-places.yaml. Nothing has been added:
+    the five operations, the four schemas and the field names (including the source document's
+    "latitute"/"longitute" spellings) are exactly as RNOC published them. Operations commented out
+    in the source (POST /gtplaces/flag) are not reproduced here.
+    OPERATIONAL NOTE, probed 2026-09-01: the declared base host m.gatech.edu now answers every
+    request with a Microsoft Entra ID sign-in redirect (HTTP 200, text/html, ~23 KB), so the
+    endpoints below are no longer anonymously callable even though the documentation still
+    describes them as open. The contract is Georgia Tech's; the deployment is now gated.
+  version: 1.0.0
+  contact:
+    name: Georgia Tech Research Network Operations Center (RNOC)
+    url: https://rnoc.gatech.edu/gt-places-api
+  x-source: https://rnoc.gatech.edu/sites/default/files/gtplaces_6.yaml
+  x-source-url: https://rnoc.gatech.edu/sites/default/files/gtplaces_6.yaml
+  x-operator: institution
+  x-method: searched
+servers:
+- url: https://m.gatech.edu/api
+  description: >-
+    Declared in the source document as host m.gatech.edu with basePath /api over https. Probed
+    2026-09-01 — the host returns a Microsoft Entra ID sign-in redirect rather than API responses.
+tags:
+- name: buildings
+  description: Campus buildings and offices.
+- name: buildings_id
+  description: Lookup of a single building by its b_id.
+- name: categories
+  description: The category vocabulary applied to places.
+- name: tags
+  description: Community tags applied to buildings.
+paths:
+  /gtplaces/buildings/:
+    get:
+      tags:
+      - buildings
+      summary: Returns list of all buildings with their information
+      description: >-
+        Returns list of all buildings with building id, name, address, latitude, longitude, image url
+        and tags.
+      operationId: listBuildings
+      responses:
+        '200':
+          description: An array of building information
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/buildings'
+  /gtplaces/buildings/{building_id}/:
+    get:
+      tags:
+      - buildings_id
+      summary: Returns building id number
+      description: Search by building ID
+      operationId: getBuildingById
+      parameters:
+      - name: building_id
+        in: path
+        required: true
+        description: >-
+          Id of the building. Refer to the 'b_id' property in /gtplaces/buildings for the up-to-date
+          values.
+        schema:
+          type: string
+          default: '50'
+      responses:
+        '200':
+          description: Soon to be updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/buildings'
+  /gtplaces/categories/:
+    get:
+      tags:
+      - categories
+      summary: Return lists of all categories
+      description: Return lists of all categories
+      operationId: listCategories
+      responses:
+        '200':
+          description: List of all gtplaces categories
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/categories'
+  /gtplaces/tags/:
+    get:
+      tags:
+      - tags
+      summary: >-
+        Returns lists of all tags with tag id, building id, tagname, user who created the tag, number
+        of tags, number of flags
+      description: >-
+        Returns lists of all tags with tag id, building id, tagname, user who created the tag, number
+        of tags, number of flags
+      operationId: listTags
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tags'
+  /gtplaces/buildings/{building_id}/tags/{tag_name}:
+    get:
+      tags:
+      - tags
+      summary: Search tag by building
+      description: Search tag by building
+      operationId: getBuildingTag
+      parameters:
+      - name: building_id
+        in: path
+        required: true
+        description: Building Id
+        schema:
+          type: string
+          default: '141'
+      - name: tag_name
+        in: path
+        required: true
+        description: >-
+          Name of the tag. Refer to the 'tag_name' property in /gtplaces/tags for the up-to-date
+          values.
+        schema:
+          type: string
+          default: building
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/buildingsbytag'
+components:
+  schemas:
+    buildings:
+      type: object
+      description: A Georgia Tech campus building or office.
+      properties:
+        b_id:
+          type: string
+          description: ID of the building.
+        name:
+          type: string
+          description: Name of the building.
+        address:
+          type: string
+          description: Address of the building.
+        image_url:
+          type: string
+          description: Image of the building.
+        latitute:
+          type: string
+          description: Latitute of the building.
+        longitute:
+          type: string
+          description: Longitute of the building.
+        phone_num:
+          type: string
+          description: Phone number of the building.
+        tag_list:
+          type: array
+          description: Tags of the building.
+          items:
+            type: string
+    buildingsbytag:
+      type: object
+      description: A building returned in the context of a single community tag.
+      properties:
+        b_id:
+          type: string
+          description: ID of the building.
+        name:
+          type: string
+          description: Name of the building.
+        address:
+          type: string
+          description: Address of the building.
+        image_url:
+          type: string
+          description: Image of the building.
+        latitute:
+          type: string
+          description: Latitute of the building.
+        longitute:
+          type: string
+          description: Longitute of the building.
+        phone_num:
+          type: string
+          description: Phone number of the building.
+        tag_name:
+          type: string
+          description: Name of the tag.
+    tags:
+      type: object
+      description: A community tag applied to a building, with its flag and usage counters.
+      properties:
+        tag_id:
+          type: string
+        b_id:
+          type: string
+        tag_name:
+          type: string
+        gtuser:
+          type: string
+        auth:
+          type: string
+        times_tag:
+          type: string
+        flag_users:
+          type: string
+        times_flagged:
+          type: string
+    categories:
+      type: array
+      description: The list of place categories.
+      items:
+        type: string
