@@ -112,41 +112,6 @@ apis:
   properties:
   - type: Documentation
     url: https://repository.gatech.edu/
-- aid: georgia-institute-of-technology:sums
-  name: Georgia Tech SUMS REST API
-  x-operator: institution
-  description: >-
-    The Shared User Management System (SUMS) REST API, operated by Georgia Tech at sums.gatech.edu to
-    manage researcher access to shared lab instruments, training records, equipment-group queues and BuzzCard
-    identity lookups. Georgia Tech publishes the Swagger 2.0 document itself at /SUMSAPI/rest/API/swagger.json
-    (200, re-verified 2026-09-01); the OpenAPI here is converted from it and the pristine copy is kept
-    in openapi/_original/. Built on the OutSystems low-code platform but hosted on Georgia Tech's own
-    domain and describing Georgia Tech's own system. Most operations require an APIKey query parameter
-    with no public issuance path.
-  humanURL: https://sums.gatech.edu/SUMSAPI/rest/API/
-  baseURL: https://sums.gatech.edu/SUMSAPI/rest/API
-  tags: []
-  tags_raw:
-  - API
-  properties:
-  - type: OpenAPI
-    url: openapi/georgia-institute-of-technology-api-api-openapi.yml
-  - type: Documentation
-    url: https://sums.gatech.edu/SUMSAPI/rest/API/
-  - type: Swagger
-    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
-  - type: x-json-schema
-    url: json-schema/georgia-institute-of-technology-tool-schema.json
-  - type: x-json-structure
-    url: json-structure/georgia-institute-of-technology-tool-structure.json
-  - type: x-examples
-    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
-  - type: x-rules
-    url: rules/georgia-institute-of-technology-rules.yml
-  - type: x-vocabulary
-    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
-  - type: x-json-ld
-    url: json-ld/georgia-institute-of-technology-context.jsonld
 - aid: georgia-institute-of-technology:buzzapi
   name: BuzzAPI
   x-operator: institution
@@ -344,6 +309,393 @@ apis:
     url: https://rnoc.gatech.edu/gt-places-api
   - type: Swagger
     url: https://rnoc.gatech.edu/sites/default/files/gtplaces_6.yaml
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-add-user-by-username-api
+  name: Georgia Institute of Technology Add User By Username API
+  description: >-
+    The Add User By Username API from Georgia Institute of Technology — 1 operation(s) for add user by
+    username.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - Add User By Username
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-add-user-by-username-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-contactforms-api
+  name: Georgia Institute of Technology Contact Forms API
+  description: >-
+    The ContactForms API from Georgia Institute of Technology — 1 operation(s) for contactforms.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - ContactForms
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-contactforms-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-equipmentgroup-info-api
+  name: Georgia Institute of Technology EquipmentGroup Info API
+  description: >-
+    The EquipmentGroup Info API from Georgia Institute of Technology — 1 operation(s) for equipmentgroup
+    info.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - EquipmentGroup Info
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-equipmentgroup-info-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: >-
+    georgia-institute-of-technology:georgia-institute-of-technology-equipmentgroup-queuegroups-api
+  name: Georgia Institute of Technology EquipmentGroup QueueGroups API
+  description: >-
+    The EquipmentGroup QueueGroups API from Georgia Institute of Technology — 1 operation(s) for equipmentgroup
+    queuegroups.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - EquipmentGroup QueueGroups
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-equipmentgroup-queuegroups-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: >-
+    georgia-institute-of-technology:georgia-institute-of-technology-equipmentgroup-queueusers-api
+  name: Georgia Institute of Technology EquipmentGroup QueueUsers API
+  description: >-
+    The EquipmentGroup QueueUsers API from Georgia Institute of Technology — 1 operation(s) for equipmentgroup
+    queueusers.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - EquipmentGroup QueueUsers
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-equipmentgroup-queueusers-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-equipmentgroup-tools-api
+  name: Georgia Institute of Technology EquipmentGroup Tools API
+  description: >-
+    The EquipmentGroup Tools API from Georgia Institute of Technology — 1 operation(s) for equipmentgroup
+    tools.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - EquipmentGroup Tools
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-equipmentgroup-tools-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-gettoolstatus-api
+  name: Georgia Institute of Technology Get Tool Status API
+  description: >-
+    The GetToolStatus API from Georgia Institute of Technology — 1 operation(s) for gettoolstatus.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - GetToolStatus
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-gettoolstatus-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-gettrainingreport-api
+  name: Georgia Institute of Technology Get Training Report API
+  description: >-
+    The GetTrainingReport API from Georgia Institute of Technology — 1 operation(s) for gettrainingreport.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - GetTrainingReport
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-gettrainingreport-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: >-
+    georgia-institute-of-technology:georgia-institute-of-technology-getusernameandemailbybuzzcardnumber-api
+  name: Georgia Institute of Technology Get User Name And Email By Buzz Card Number API
+  description: >-
+    The GetUserNameAndEmailByBuzzCardNumber API from Georgia Institute of Technology — 1 operation(s)
+    for getusernameandemailbybuzzcardnumber.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - GetUserNameAndEmailByBuzzCardNumber
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/georgia-institute-of-technology-getusernameandemailbybuzzcardnumber-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-toolcheckloggedin-api
+  name: Georgia Institute of Technology Tool Check Logged In API
+  description: >-
+    The ToolCheckLoggedIn API from Georgia Institute of Technology — 1 operation(s) for toolcheckloggedin.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - ToolCheckLoggedIn
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-toolcheckloggedin-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-traininginfo-api
+  name: Georgia Institute of Technology Training Info API
+  description: >-
+    The TrainingInfo API from Georgia Institute of Technology — 1 operation(s) for traininginfo.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - TrainingInfo
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-traininginfo-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-updateusertemplate-api
+  name: Georgia Institute of Technology Update User Template API
+  description: >-
+    The UpdateUserTemplate API from Georgia Institute of Technology — 1 operation(s) for updateusertemplate.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - UpdateUserTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-updateusertemplate-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-user-info-api
+  name: Georgia Institute of Technology User Info API
+  description: The User Info API from Georgia Institute of Technology — 1 operation(s) for user info.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - User Info
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-user-info-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
+- aid: georgia-institute-of-technology:georgia-institute-of-technology-whologgedin-api
+  name: Georgia Institute of Technology Who Logged In API
+  description: >-
+    The WhoLoggedIn API from Georgia Institute of Technology — 1 operation(s) for whologgedin.
+  humanURL: https://repository.gatech.edu/
+  baseURL: https://repository.gatech.edu/server/oai/request
+  tags:
+  - WhoLoggedIn
+  properties:
+  - type: OpenAPI
+    url: openapi/georgia-institute-of-technology-whologgedin-api-openapi.yml
+  - type: Documentation
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/
+  - type: Swagger
+    url: https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json
+  - type: x-json-schema
+    url: json-schema/georgia-institute-of-technology-tool-schema.json
+  - type: x-json-structure
+    url: json-structure/georgia-institute-of-technology-tool-structure.json
+  - type: x-examples
+    url: examples/georgia-institute-of-technology-equipmentGroup_tools-example.json
+  - type: x-rules
+    url: rules/georgia-institute-of-technology-rules.yml
+  - type: x-vocabulary
+    url: vocabulary/georgia-institute-of-technology-vocabulary.yml
+  - type: x-json-ld
+    url: json-ld/georgia-institute-of-technology-context.jsonld
 common:
   - type: Website
     url: https://www.gatech.edu/

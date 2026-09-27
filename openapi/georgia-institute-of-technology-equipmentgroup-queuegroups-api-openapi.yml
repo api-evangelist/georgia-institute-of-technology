@@ -1,0 +1,62 @@
+openapi: 3.2.0
+info:
+  title: Georgia Tech SUMS REST EquipmentGroup QueueGroups API
+  description: REST API published by Georgia Tech's SUMS system (Shared User Management System), built on the OutSystems low-code platform. Converted faithfully from the published Swagger 2.0 document at https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json.
+  version: '1'
+servers:
+- url: https://sums.gatech.edu/SUMSAPI/rest/API
+tags:
+- name: EquipmentGroup QueueGroups
+paths:
+  /equipmentGroup_queueGroups:
+    post:
+      tags:
+      - EquipmentGroup QueueGroups
+      operationId: equipmentGroup_queueGroups
+      parameters:
+      - name: authorization
+        in: header
+        required: true
+        schema:
+          type: string
+          default: ''
+      - name: DepartmentID
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+          example: 0
+      - name: userName
+        in: query
+        required: true
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LongIntegerBooleanTextRecord'
+      summary: Equipment group queue groups
+      x-summary-source: derived
+components:
+  schemas:
+    LongIntegerBooleanTextRecord:
+      description: ''
+      type: object
+      properties:
+        name:
+          type: string
+          default: ''
+        id:
+          type: integer
+          example: 1234567891234567
+          format: int64
+        isGroup:
+          type: boolean
+          example: false
