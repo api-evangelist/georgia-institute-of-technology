@@ -24,9 +24,7 @@
     "georgia-institute-of-technology-user-info-api-openapi.yml",
     "georgia-institute-of-technology-whologgedin-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 1 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -66,15 +64,27 @@
     "georgia-institute-of-technology-sums.yaml: declared missing tag: UpdateUserTemplate",
     "georgia-institute-of-technology-sums.yaml: declared missing tag: User Info",
     "georgia-institute-of-technology-sums.yaml: declared missing tag: WhoLoggedIn",
-    "superseded outputs removed: georgia-institute-of-technology-api-api-openapi.yml",
-    "apis.yml register: written (+14 apis, 26 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "_original/georgia-institute-of-technology-gtplaces-openapi.yml: archived document superseded by a larger archived document",
-    "georgia-institute-of-technology-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-add-user-by-username-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "georgia-institute-of-technology-buildings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "georgia-institute-of-technology-buildings-id-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "georgia-institute-of-technology-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "georgia-institute-of-technology-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "georgia-institute-of-technology-contactforms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-equipmentgroup-info-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-equipmentgroup-queuegroups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-equipmentgroup-queueusers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-equipmentgroup-tools-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-gettoolstatus-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-gettrainingreport-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-getusernameandemailbybuzzcardnumber-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-toolcheckloggedin-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-traininginfo-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-updateusertemplate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-user-info-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "georgia-institute-of-technology-whologgedin-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

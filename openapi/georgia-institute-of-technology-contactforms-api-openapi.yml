@@ -54,6 +54,16 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    ResponsesStructure:
+      description: ''
+      type: object
+      properties:
+        Question:
+          type: string
+          default: ''
+        Response:
+          type: string
+          default: ''
     QuestionAnswersStructure:
       description: ''
       type: object
@@ -69,13 +79,3 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ResponsesStructure'
-    ResponsesStructure:
-      description: ''
-      type: object
-      properties:
-        Question:
-          type: string
-          default: ''
-        Response:
-          type: string
-          default: ''

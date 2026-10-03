@@ -64,25 +64,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    tags:
-      type: object
-      properties:
-        tag_id:
-          type: string
-        b_id:
-          type: string
-        tag_name:
-          type: string
-        gtuser:
-          type: string
-        auth:
-          type: string
-        times_tag:
-          type: string
-        flag_users:
-          type: string
-        times_flagged:
-          type: string
     buildingsbytag:
       type: object
       properties:
@@ -110,3 +91,22 @@ components:
         tag_name:
           type: string
           description: Name of the tag.
+    tags:
+      type: object
+      properties:
+        tag_id:
+          type: string
+        b_id:
+          type: string
+        tag_name:
+          type: string
+        gtuser:
+          type: string
+        auth:
+          type: string
+        times_tag:
+          type: string
+        flag_users:
+          type: string
+        times_flagged:
+          type: string
