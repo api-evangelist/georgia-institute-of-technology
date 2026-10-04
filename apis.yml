@@ -344,6 +344,8 @@ apis:
   humanURL: https://repository.gatech.edu/
   baseURL: https://repository.gatech.edu/server/oai/request
   tags:
+  - Contact Forms
+  tags_raw:
   - ContactForms
   properties:
   - type: OpenAPI
@@ -649,6 +651,8 @@ apis:
   humanURL: https://repository.gatech.edu/
   baseURL: https://repository.gatech.edu/server/oai/request
   tags:
+  - UserInfo
+  tags_raw:
   - User Info
   properties:
   - type: OpenAPI
@@ -697,6 +701,9 @@ apis:
   - type: x-json-ld
     url: json-ld/georgia-institute-of-technology-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/georgia-institute-of-technology-capability-edges.yml
+    name: Georgia Institute of Technology Business Capability Map
   - type: Website
     url: https://www.gatech.edu/
   - type: GitHub
