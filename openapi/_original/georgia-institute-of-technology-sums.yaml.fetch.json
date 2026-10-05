@@ -1,0 +1,12 @@
+{
+ "url": "https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json",
+ "requested_url": "https://sums.gatech.edu/SUMSAPI/rest/API/swagger.json",
+ "status": 200,
+ "content_type": "application/json; charset=utf-8",
+ "bytes": 13069,
+ "sha256": "7ca214ac766bbd5ae354dc7f1c6e232a82e580965c4222f6f1dccf81db9f2b42",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
