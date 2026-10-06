@@ -63,7 +63,7 @@ tags:
   - Open Data
   - Research
 created: '2026-06-03'
-modified: '2026-09-01'
+modified: '2026-10-06'
 # artifacts added 2026-06-03: SUMS OpenAPI 3.0, schemas, structures, examples, rules, vocabulary, json-ld
 # 2026-09-01 university pipeline: operator axis stamped on every surface, GT Places contract harvested
 #   from RNOC, education-regime conformance probed, two dead BuzzAPI handbook pointers removed.
@@ -701,6 +701,8 @@ apis:
   - type: x-json-ld
     url: json-ld/georgia-institute-of-technology-context.jsonld
 common:
+  - url: https://news.research.gatech.edu/rss.xml
+    type: BlogRSS
   - type: CapabilityMap
     url: capabilities/georgia-institute-of-technology-capability-edges.yml
     name: Georgia Institute of Technology Business Capability Map
