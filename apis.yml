@@ -233,7 +233,7 @@ apis:
   humanURL: https://canvas.gatech.edu/
   baseURL: https://gatech.instructure.com
   tags:
-  - Learning Management System
+  - LMS
   - Canvas
   - Instructure
   - Tenants
