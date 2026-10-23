@@ -33,3 +33,9 @@ components:
       type: array
       items:
         type: string
+x-provenance:
+  method: harvested
+  publisher: Georgia Institute of Technology
+  source: https://rnoc.gatech.edu/sites/default/files/gtplaces_6.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
